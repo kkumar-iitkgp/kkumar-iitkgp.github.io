@@ -20,23 +20,17 @@
         .about-me {
             width: 100%;
         }
-          .about-me img {
+        .about-me img {
             width: 200px;
             height: auto;
             display: block;
             margin-bottom: 20px;
-            float: right; /* Float the image to the right */
-            margin-left: 30px; /* Add some space between the image and the text */
+            float: right;
+            margin-left: 20px;
         }
         .publications {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .publications {
-            width: 80%;
-            height: 200px; /* Adjust the height as needed */
+            width: 90%;
+            height: 250px; /* Adjust the height as needed */
             margin-bottom: 20px;
             position: relative;
             overflow: hidden; /* Hide overflow to maintain height */
@@ -63,32 +57,54 @@
         }
         .twitter-feed {
             height: 200px; /* Adjust the height as needed */
-        } 
+        }
+        .nav-buttons {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .nav-buttons a {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+    <div class="nav-buttons">
+        <a href="#about-me">About Me</a>
+        <a href="#publications">Publications</a>
+        <a href="#presentation">Presentation</a>
+        <a href="#twitter-feed">Twitter Feed</a>
+    </div>
     <div class="container">
-        <div class="section about-me">
+        <div class="section about-me" id="about-me">
             <h2>About Me</h2>
             <img src="docs/KuldeepKumar.jpg" alt="About Me">
             <p>Hello! I'm Kuldeep Kumar!!! <br><br> 
                 
                 <strong>Research summary:</strong> <br>
-While rare and common variants both contribute to the risk of psychiatric conditions and influence brain structure, 
+                While rare and common variants both contribute to the risk of psychiatric conditions and influence brain structure, 
                 these research areas often operate in silos. 
                 My research cross-examines the risk associated with rare and common variants for psychiatric conditions 
                 and explores how these variants impact brain structure as measured by Magnetic Resonance Imaging (MRI) in humans. 
                 To achieve this, I leverage recent advances in functional genomics to connect psychiatric and neuroimaging genetics, 
                 aiming to understand how large-scale brain networks may underlie the link between genomic variants and psychiatric disorders. <br> <br>
 
-                 <strong>Background:</strong> <br>
-I am currently a postdoctoral researcher in Professor Sebastien Jacquemont’s lab at the CHUSJ Research Center, University of Montréal, where I study how rare variants, such as CNVs and SNVs, impact cognition and brain structure. <br><br> 
+                <strong>Background:</strong> <br>
+                I am currently a postdoctoral researcher in Professor Sebastien Jacquemont’s lab at the CHUSJ Research Center, University of Montréal, where I study how rare variants, such as CNVs and SNVs, impact cognition and brain structure. <br><br> 
 
-I earned my Ph.D. in Applied Research from ÉTS in Montreal, focusing on multi-modal MRI analysis using machine learning to develop brain fingerprints.  <br><br> 
-                I hold a bachelor’s and master’s degree in Electronics and Electrical Communication Engineering from IIT Kharagpur, India. <be>
-                Before embarking on my Ph.D. journey, I worked as a Scientist at the Indian Space Research Organization (ISRO), contributing to projects like the Mars Orbiter Mission.                <br> <br> 
-            <strong>Research Interests:</strong> <br>
-            Neuroimaging genetics - Genetic variants - Brain MRI - Multi-omics - Medical image analysis - Big data and Machine Learning
+                I earned my Ph.D. in Applied Research from ÉTS in Montreal, focusing on multi-modal MRI analysis using machine learning to develop brain fingerprints.  <br><br> 
+                I hold a bachelor’s and master’s degree in Electronics and Electrical Communication Engineering from IIT Kharagpur, India. <br>
+                Before embarking on my Ph.D. journey, I worked as a Scientist at the Indian Space Research Organization (ISRO), contributing to projects like the Mars Orbiter Mission. <br> <br> 
+                <strong>Research Interests:</strong> <br>
+                Neuroimaging genetics - Genetic variants - Brain MRI - Multi-omics - Medical image analysis - Big data and Machine Learning
             </p>
         </div>
         <div class="section full-width">
@@ -96,7 +112,7 @@ I earned my Ph.D. in Applied Research from ÉTS in Montreal, focusing on multi-m
             <p><a href="docs/CV_KuldeepKumar_June2024.pdf" target="_blank">Full CV</a></p>
             <p><a href="https://scholar.google.ca/citations?user=Ujqe9DsAAAAJ&hl=en" target="_blank">Publications: Google Scholar</a></p>
         </div>
-        <div class="section full-width">
+        <div class="section full-width" id="publications">
             <h2>Select Publications</h2>
             <div class="publications">
                 <div class="publication active">
@@ -109,7 +125,7 @@ I earned my Ph.D. in Applied Research from ÉTS in Montreal, focusing on multi-m
                     <a href="https://www.nature.com/articles/s41398-021-01490-9" target="_blank">
                         <img src="docs/TransPsy_CNVs_MRI_fig2.jpg" alt="Publication 2">
                         <p>Effects of eight neuropsychiatric copy number variants on human brain structure</p>
-                        </a>
+                    </a>
                 </div>
                 <div class="publication">
                     <a href="https://www.sciencedirect.com/science/article/pii/S1053811918306876" target="_blank">
@@ -118,20 +134,20 @@ I earned my Ph.D. in Applied Research from ÉTS in Montreal, focusing on multi-m
                     </a>
                 </div>
             </div>
-        <div class="section youtube-video">
+        </div>
+        <div class="section youtube-video" id="presentation">
             <h2>Select Presentation</h2>
             <a href="https://vimeo.com/945775305/5f4ca6fc84?share=copy" target="_blank">
                 <img src="docs/SOBP2024_ppt_KK.jpg" alt="YouTube Video Thumbnail" class="youtube-thumbnail">
             </a>
         </div>
-        <div class="section twitter-feed">
+        <div class="section twitter-feed" id="twitter-feed">
             <h2>Twitter Feed</h2>
             <a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/kkumar_iitkgp">Tweets by @kkumar_iitkgp</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-        
     </div>
-        <script>
+    <script>
         let currentIndex = 0;
         const publications = document.querySelectorAll('.publication');
 
