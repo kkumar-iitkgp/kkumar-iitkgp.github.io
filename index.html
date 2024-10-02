@@ -20,11 +20,13 @@
         .about-me {
             width: 100%;
         }
-        .about-me img {
+          .about-me img {
             width: 150px;
             height: auto;
             display: block;
             margin-bottom: 10px;
+            float: right; /* Float the image to the right */
+            margin-left: 20px; /* Add some space between the image and the text */
         }
         .publications {
             display: flex;
@@ -32,8 +34,17 @@
             width: 100%;
             margin-bottom: 20px;
         }
+        .publications {
+            width: 100%;
+            margin-bottom: 20px;
+            position: relative;
+        }
         .publication {
-            width: 30%;
+            display: none;
+            width: 100%;
+        }
+        .publication.active {
+            display: block;
         }
         .publication img {
             width: 100%;
@@ -80,28 +91,28 @@ I earned my Ph.D. in Applied Research from ÉTS in Montreal, focusing on multi-m
             <p><a href="docs/CV_KuldeepKumar_June2024.pdf" target="_blank">Full CV</a></p>
             <p><a href="https://scholar.google.ca/citations?user=Ujqe9DsAAAAJ&hl=en" target="_blank">Publications: Google Scholar</a></p>
         </div>
-        <div class="full-width">
+        <div class="section full-width">
             <h2>Select Publications</h2>
-            <div class="publication">
-                <a href="https://psychiatryonline.org/doi/full/10.1176/appi.ajp.20220304" target="_blank">
-                    <img src="docs/AJP_paper_Fig3.jpg" alt="Publication 1">
-                    <p>Subcortical brain alterations in carriers of genomic copy number variants</p>
-                </a>
+            <div class="publications">
+                <div class="publication active">
+                    <a href="https://psychiatryonline.org/doi/full/10.1176/appi.ajp.20220304" target="_blank">
+                        <img src="docs/AJP_paper_Fig3.jpg" alt="Publication 1">
+                        <p>Subcortical brain alterations in carriers of genomic copy number variants</p>
+                    </a>
+                </div>
+                <div class="publication">
+                    <a href="https://www.nature.com/articles/s41398-021-01490-9" target="_blank">
+                        <img src="docs/TransPsy_CNVs_MRI_fig2.jpg" alt="Publication 2">
+                        <p>Effects of eight neuropsychiatric copy number variants on human brain structure</p>
+                        </a>
+                </div>
+                <div class="publication">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1053811918306876" target="_blank">
+                        <img src="docs/MultiModal_brain_fingerprint_Fig1.jpg" alt="Publication 3">
+                        <p>Multi-modal brain fingerprinting: A manifold approximation based framework</p>
+                    </a>
+                </div>
             </div>
-            
-            <div class="publication">
-                <a href="https://www.nature.com/articles/s41398-021-01490-9" target="_blank">
-                    <img src="docs/TransPsy_CNVs_MRI_fig2.jpg" alt="Publication 2">
-                    <p>Effects of eight neuropsychiatric copy number variants on human brain structure</p>
-                </a>
-            </div>
-            <div class="publication">
-                <a href="https://www.sciencedirect.com/science/article/pii/S1053811918306876" target="_blank">
-                    <img src="docs/MultiModal_brain_fingerprint_Fig1.jpg" alt="Publication 3">
-                    <p>Multi-modal brain fingerprinting: A manifold approximation based framework</p>
-                </a>
-            </div>
-        </div>
         <div class="section youtube-video">
             <h2>Select Presentation</h2>
             <a href="https://vimeo.com/945775305/5f4ca6fc84?share=copy" target="_blank">
@@ -115,5 +126,17 @@ I earned my Ph.D. in Applied Research from ÉTS in Montreal, focusing on multi-m
         </div>
         
     </div>
+        <script>
+        let currentIndex = 0;
+        const publications = document.querySelectorAll('.publication');
+
+        function showNextPublication() {
+            publications[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % publications.length;
+            publications[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextPublication, 5000); // Change publication every 3 seconds
+    </script>
 </body>
 </html>
