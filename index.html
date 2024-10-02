@@ -17,9 +17,29 @@
         .full-width {
             width: 100%;
         }
-        .about-me img {
+        .about-me {
             width: 100%;
+        }
+        .about-me img {
+            width: 150px;
             height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .vimeo-video {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+        }
+        .vimeo-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -28,12 +48,17 @@
         <div class="section about-me">
             <h2>About Me</h2>
             <img src="docs/KuldeepKumar.jpg" alt="About Me">
-            <p>Hello! I'm Kuldeep Kumar!!!
-I am a postdoctoral researcher in the lab of Professor Sebastien Jacquemont at the CHUSJ Research Center, University of Montréal, Canada. My current research focuses on investigating the impact of rare copy number variations (CNVs) on cognition, brain structure, and function. My research interests include data science, imaging genetics, medical image analysis, and neuroscience. </p>
+            <p>Hello! I'm Kuldeep Kumar!!! <br> 
+                I am a postdoctoral researcher in the lab of Professor Sebastien Jacquemont at the CHUSJ Research Center, University of Montréal, Canada. My current research focuses on investigating the impact of rare copy number variations (CNVs) on cognition, brain structure, and function.                <br><br>
+            <strong>Research Interests:</strong> <br>
+            - Neuroimaging genetics <br>
+            - Medical image analysis <br>
+            - Big data and Machine Learning
+            </p>
         </div>
-        <div class="section youtube-video">
-            <h2>Presentations</h2>
-            <iframe width="100%" height="400" src="https://vimeo.com/945775305/5f4ca6fc84?share=copy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="section vimeo-video">
+            <h2>Select Presentation</h2>
+            <iframe src="https://vimeo.com/945775305/5f4ca6fc84?share=copy" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="section twitter-feed">
             <h2>Twitter Feed</h2>
@@ -42,7 +67,7 @@ I am a postdoctoral researcher in the lab of Professor Sebastien Jacquemont at t
         </div>
         <div class="section full-width">
             <h2>Links</h2>
-            <p><a href="docs/CV_KuldeepKumar_June2024.pdf" target="_blank">My CV</a></p>
+            <p><a href="docs/CV_KuldeepKumar_June2024.pdf" target="_blank">Full CV</a></p>
             <p><a href="https://scholar.google.ca/citations?user=Ujqe9DsAAAAJ&hl=en" target="_blank">Google Scholar Publications</a></p>
         </div>
     </div>
