@@ -28,6 +28,24 @@
             float: right;
             margin-left: 20px;
         }
+        .research {
+            width: 80%;
+            height: auto; /* Adjust the height as needed */
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden; /* Hide overflow to maintain height */
+        }
+        .research {
+            display: none;
+            width: 80%;
+        }
+        .research.active {
+            display: block;
+        }
+        .research img {
+            width: 80%;
+            height: auto;
+        }
         .publications {
             width: 80%;
             height: auto; /* Adjust the height as needed */
@@ -80,6 +98,7 @@
     <div class="nav-buttons">
         <a href="#about-me">About Me</a>
         <a href="#CV">CV</a>
+        <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#presentation">Presentation</a>
         <a href="#twitter-feed">Twitter Feed</a>
@@ -108,6 +127,36 @@
         <div class="section full-width"  id="CV">
             <h2> CV </h2>
             <p><a href="docs/CV_KuldeepKumar_June2024.pdf" target="_blank">Full CV</a></p>
+        </div>
+        <div class="section full-width" id="research">
+            <h2>Research</h2>
+            <h2>Recent projects</h2>
+            <div class="research">
+                <div class="research active">
+                    <a href="" target="_blank">
+                        Copy Number Variants and Psychiatric Disorders Show Differential Effects on Cortical Thickness and Surface Area
+                        <img src="docs/SSDN_ACNP2024_poster_KK_v1.jpg" alt="Publication 1">
+                    </a>
+                </div>
+                <div class="research">
+                    <a href="" target="_blank">
+                        Characterizing the Rare Copy Number Variant Architecture of the Cortical Organization of the Human Brain
+                        <img src="docs/Poster_SOBP2024_Kuldeep_backup_3May2024.jpg" alt="Publication 2">
+                    </a>
+                </div>
+                <div class="research">
+                    <a href="" target="_blank">
+                        Gene dosage architecture across complex traits and common diseases
+                        <img src="docs/ASHG_poster_2024_KK_vNov1.jpg" alt="Publication 2">
+                    </a>
+                </div>
+                <div class="research">
+                    <a href="" target="_blank">
+                        Genomic Deletions and Duplications Show Mirror Effects on Cognitive Ability according to Spatial Patterns of Gene Expression in the Human Brain
+                        <img src="docs/Poster_SOBP2022_april2022_2900x1800_pixels_Final_22april2022.jpg" alt="Publication 3">
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="section full-width" id="publications">
             <h2>Publications</h2>
