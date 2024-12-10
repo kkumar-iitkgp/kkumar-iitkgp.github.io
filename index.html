@@ -197,12 +197,12 @@
     </div>
     <script>
         let currentIndex = 0;
-        const researchs = document.querySelectorAll('.publication');
+        const research = document.querySelectorAll('.research');
 
         function showNextResearch() {
-            researchs[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % researchs.length;
-            researchs[currentIndex].classList.add('active');
+            research[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % research.length;
+            research[currentIndex].classList.add('active');
         }
 
         setInterval(showNextResearch, 5000); // Change publication every 3 seconds
