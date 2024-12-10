@@ -195,6 +195,18 @@
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
     </div>
+     <script>
+        let currentIndex = 0;
+        const researchs = document.querySelectorAll('.publication');
+
+        function showNextResearch() {
+            researchs[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % researchs.length;
+            researchs[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextResearch, 5000); // Change publication every 3 seconds
+    </script>
     <script>
         let currentIndex = 0;
         const publications = document.querySelectorAll('.publication');
