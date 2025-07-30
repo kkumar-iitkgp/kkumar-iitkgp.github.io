@@ -4,217 +4,397 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kuldeep Kumar, Ph.D.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- General Body and Typography --- */
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light gray background */
+            color: #343a40; /* Darker charcoal text for readability */
+            line-height: 1.6;
+        }
+
         .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #0056b3; /* Professional blue for headings */
+        }
+        
+        h2 {
+            border-bottom: 2px solid #dee2e6; /* Subtle underline for section titles */
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        a {
+            color: #0056b3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #003d82; /* Darker blue on hover */
+        }
+
+        /* --- Header and Navigation --- */
+        .header {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-bottom: 3px solid #0056b3;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            color: #343a40;
+        }
+
+        .header h1 span {
+            font-weight: 400;
+            font-size: 0.7em;
+            color: #6c757d;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-buttons a {
+            padding: 8px 15px;
+            color: #343a40;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .nav-buttons a:hover {
+            background-color: #0056b3;
+            color: #ffffff;
+        }
+
+        /* --- Section Styling --- */
+        .section {
+            padding: 40px 20px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            scroll-margin-top: 120px; /* Offset for sticky header */
+        }
+        
+        /* --- About Me Section --- */
+        .about-me-content {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
         }
-        .section {
-            width: 48%;
-            margin-bottom: 20px;
+
+        .about-me-text {
+            flex: 2; /* Takes up 2/3 of the space */
+            min-width: 300px;
         }
-        .full-width {
-            width: 100%;
-        }
-        .about-me {
-            width: 100%;
-        }
-        .about-me img {
-            width: 400px;
-            height: auto;
-            display: block;
-            margin-bottom: 30px;
-            float: right;
-            margin-left: 20px;
-        }
-        .researchs {
-            width: 80%;
-            height: auto; /* Adjust the height as needed */
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden; /* Hide overflow to maintain height */
-        }
-        .research {
-            display: none;
-            width: 80%;
-        }
-        .research.active {
-            display: block;
-        }
-        .research img {
-            width: 80%;
-            height: auto;
-        }
-        .publications {
-            width: 80%;
-            height: auto; /* Adjust the height as needed */
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden; /* Hide overflow to maintain height */
-        }
-        .publication {
-            display: none;
-            width: 80%;
-        }
-        .publication.active {
-            display: block;
-        }
-        .publication img {
-            width: 80%;
-            height: auto;
-        }
-        .youtube-video, .twitter-feed {
-            width: 48%;
-        }
-        .youtube-thumbnail {
-            width: 100%;
-            height: auto; /* Adjust the height as needed */
-            object-fit: cover;
-            cursor: pointer;
-        }
-        .twitter-feed {
-            height: 200px; /* Adjust the height as needed */
-        }
-        .nav-buttons {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-        }
-        .nav-buttons a {
-            padding: 10px;
-            background-color: #808080;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
+        
+        .about-me-image {
+            flex: 1; /* Takes up 1/3 of the space */
             text-align: center;
+            min-width: 250px;
         }
+
+        .about-me-image img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* --- Research & Publications Card Carousel --- */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            display: none; /* Hide all items by default */
+        }
+
+        .carousel-item.active {
+            display: block; /* Show only the active item */
+            animation: fadeIn 0.8s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .card {
+            display: flex;
+            gap: 20px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .card-image {
+            flex: 1;
+            min-width: 200px;
+            max-width: 400px;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .card-text {
+            flex: 2;
+        }
+        
+        .card-text h3 {
+            margin-top: 0;
+            color: #343a40;
+        }
+        
+        .card-text p {
+            margin: 5px 0;
+        }
+        
+        .card-links a {
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        /* --- Side-by-Side sections (Presentation & Twitter) --- */
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .flex-item {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .presentation-thumbnail img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .presentation-thumbnail img:hover {
+            transform: scale(1.03);
+        }
+        
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+
     </style>
 </head>
 <body>
-    <div class="nav-buttons">
-        <a href="#about-me">About Me</a>
-        <a href="#CV">CV</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#presentation">Presentation</a>
-        <a href="#twitter-feed">Twitter Feed</a>
-    </div>
-    <div class="container">
-        <div class="section about-me" id="about-me">
-            <h2>About Me</h2>
-            <img src="docs/KuldeepKumar.jpg" alt="About Me">
-            <p>Hello! I'm Kuldeep Kumar!!! <br><br> 
-                
-                <strong>Research summary:</strong> <br>
-                While considerable research has identified genetic variants that elevate risk for neurodevelopmental and psychiatric disorders (NPDs) and investigated their impact on brain structure, a fundamental question remains: are the cortical differences associated with these genetic variants related to the neuroimaging profiles observed in the disorders themselves? This question stands at a critical juncture for psychiatric and genetic neuroimaging. My research integrates genetic and neuroimaging data, and designs analytical approaches to systematically cross-examine the risk associated with rare and common variants for psychiatric conditions and their impact on the brain as measured by Magnetic Resonance Imaging (MRI) in humans. Beyond genetics, I'm also looking at how non-genetic factors, like medication use, might influence brain MRI measures. Ultimately, I aim to connect the dots between psychiatric and neuroimaging genetics by using cutting-edge functional genomics approaches. This will hopefully reveal how large-scale brain networks might be the missing link between our genes and the development of these disorders. My work is strengthened by my collaborations with leading researchers in the PGC and ENIGMA consortia, and it naturally sits at the exciting intersection of machine learning, neuroimaging genetics, and psychiatric genetics. <br> <br>
+    <header class="header">
+        <h1>Kuldeep Kumar, Ph.D. <span>| Postdoctoral Researcher</span></h1>
+        <nav class="nav-buttons">
+            <a href="#about-me">About</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#cv">CV</a>
+            <a href="#connect">Connect</a>
+        </nav>
+    </header>
 
-                <strong>Background:</strong> <br>
-                -I am currently a postdoctoral researcher in Professor Sebastien Jacquemont’s lab at the CHUSJ Research Center, University of Montréal, where I study how rare variants, such as CNVs and SNVs, impact cognition and brain structure. My projects investigate whether the neuroimaging signatures associated with common and rare genetic variants that elevate risk for neurodevelopmental and psychiatric disorders (NPDs) are related to the neuroimaging signatures observed in the disorders themselves. <br> 
-                -I earned my Ph.D. in Applied Research from ÉTS in Montreal, focusing on multi-modal MRI analysis using machine learning to develop brain fingerprints.  <br>
-                -I hold a bachelor’s and master’s degree in Electronics and Electrical Communication Engineering from IIT Kharagpur, India. <br>
-                -Before embarking on my Ph.D. journey, I worked as a Scientist at the Indian Space Research Organization (ISRO), contributing to projects like the Mars Orbiter Mission. <br> <br> 
-                <strong>Research Interests:</strong> <br>
-                Neuroimaging genetics - Genetic variants - Brain MRI - Multi-omics - Medical image analysis - Big data and Machine Learning
-            </p>
-        </div>
-        <div class="section full-width"  id="CV">
-            <h2> CV </h2>
-            <p><a href="docs/CV_KuldeepKumar_June2024.pdf" target="_blank">Full CV</a></p>
-        </div>
-        <div class="section full-width" id="research">
-            <h2>Research</h2>
-            <h2>Current projects</h2>
-            <div class="researchs">
-                <div class="research active">
-                    <a href="https://scholar.google.ca/citations?user=Ujqe9DsAAAAJ&hl=en" target="_blank">
-                        Copy Number Variants and Psychiatric Disorders Show Differential Effects on Cortical Thickness and Surface Area
-                        <img src="docs/SSDN_ACNP2024_poster_KK_v1.jpg" alt="Research 1">
-                    </a>
+    <div class="container">
+        <div class="section" id="about-me">
+            <h2>About Me</h2>
+            <div class="about-me-content">
+                <div class="about-me-text">
+                    <p>Hello! I'm Kuldeep Kumar. My research integrates genetic and neuroimaging data to understand how genetic risk for neurodevelopmental and psychiatric disorders (NPDs) relates to observable differences in brain structure.</p>
+                    <p><strong>Research Summary:</strong> I design analytical approaches to systematically cross-examine the impact of rare and common genetic variants on the brain as measured by Magnetic Resonance Imaging (MRI). My work aims to connect psychiatric and neuroimaging genetics by leveraging functional genomics to reveal how large-scale brain networks might mediate the path from genes to disorders. I actively collaborate with the PGC and ENIGMA consortia at the intersection of machine learning, neuroimaging genetics, and psychiatric genetics.</p>
+                    <p><strong>Background:</strong></p>
+                    <ul>
+                        <li><strong>Postdoc:</strong> University of Montréal (Lab of Dr. Sebastien Jacquemont), studying the impact of rare variants on cognition and brain structure.</li>
+                        <li><strong>Ph.D. in Applied Research:</strong> ÉTS, Montreal, focusing on multi-modal MRI analysis and brain fingerprinting using machine learning.</li>
+                        <li><strong>M.S. & B.S. in Engineering:</strong> IIT Kharagpur, India.</li>
+                        <li><strong>Previous Role:</strong> Scientist at the Indian Space Research Organization (ISRO), contributing to the Mars Orbiter Mission.</li>
+                    </ul>
                 </div>
-                <div class="research">
-                    <a href="https://scholar.google.ca/citations?user=Ujqe9DsAAAAJ&hl=en" target="_blank">
-                        Characterizing the Rare Copy Number Variant Architecture of the Cortical Organization of the Human Brain
-                        <img src="docs/Poster_SOBP2024_Kuldeep_backup_3May2024.jpg" alt="Research 2">
-                    </a>
-                </div>
-                <div class="research">
-                    <a href="https://scholar.google.ca/citations?user=Ujqe9DsAAAAJ&hl=en" target="_blank">
-                        Gene dosage architecture across complex traits and common diseases
-                        <img src="docs/ASHG_poster_2024_KK_vNov1.jpg" alt="Research 3">
-                    </a>
-                </div>
-                <div class="research">
-                    <a href="https://scholar.google.ca/citations?user=Ujqe9DsAAAAJ&hl=en" target="_blank">
-                        Genomic Deletions and Duplications Show Mirror Effects on Cognitive Ability according to Spatial Patterns of Gene Expression in the Human Brain
-                        <img src="docs/Poster_SOBP2022_april2022_2900x1800_pixels_Final_22april2022.jpg" alt="Research 4">
-                    </a>
+                <div class="about-me-image">
+                    <img src="docs/KuldeepKumar.jpg" alt="Photo of Kuldeep Kumar">
                 </div>
             </div>
         </div>
-        <div class="section full-width" id="publications">
-            <h2>Publications</h2>
-            <p><a href="https://scholar.google.ca/citations?user=Ujqe9DsAAAAJ&hl=en" target="_blank">Publications: Google Scholar</a></p>
+
+        <div class="section" id="research">
+            <h2>Current Research Projects</h2>
+            <div class="carousel-container" id="research-carousel">
+                <div class="carousel-item active">
+                    <div class="card">
+                        <div class="card-image"><img src="docs/SSDN_ACNP2024_poster_KK_v1.jpg" alt="Research Project 1 Visual"></div>
+                        <div class="card-text">
+                            <h3>CNVs and Psychiatric Disorders: Differential Effects on Cortical Morphology</h3>
+                            <p><strong>Conference:</strong> ACNP 2024</p>
+                            <p>This project investigates how specific Copy Number Variants (CNVs) and psychiatric disorders independently and jointly influence cortical thickness and surface area.</p>
+                            <div class="card-links"><a href="docs/SSDN_ACNP2024_poster_KK_v1.jpg" target="_blank">[View Poster]</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="card-image"><img src="docs/Poster_SOBP2024_Kuldeep_backup_3May2024.jpg" alt="Research Project 2 Visual"></div>
+                        <div class="card-text">
+                            <h3>Characterizing the Rare CNV Architecture of the Human Brain's Cortical Organization</h3>
+                            <p><strong>Conference:</strong> SOBP 2024</p>
+                            <p>We aim to map the architecture of rare CNVs to specific patterns of cortical organization, providing a link between rare genetic events and brain structure.</p>
+                            <div class="card-links"><a href="docs/Poster_SOBP2024_Kuldeep_backup_3May2024.jpg" target="_blank">[View Poster]</a></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+        
+        <div class="section" id="publications">
             <h2>Select Publications</h2>
-            <div class="publications">
-                <div class="publication active">
-                    <a href="https://psychiatryonline.org/doi/full/10.1176/appi.ajp.20220304" target="_blank">
-                        Subcortical brain alterations in carriers of genomic copy number variants
-                        <img src="docs/AJP_paper_Fig3.jpg" alt="Publication 1">
-                    </a>
+            <p>For a complete list, please see my <a href="https://scholar.google.ca/citations?user=Ujqe9DsAAAAJ&hl=en" target="_blank">Google Scholar profile</a>.</p>
+            <div class="carousel-container" id="publications-carousel">
+                <div class="carousel-item active">
+                    <div class="card">
+                        <div class="card-image"><img src="docs/AJP_paper_Fig3.jpg" alt="Publication 1 Figure"></div>
+                        <div class="card-text">
+                            <h3>Subcortical brain alterations in carriers of genomic copy number variants</h3>
+                            <p><strong>Authors:</strong> Kumar, K., et al.</p>
+                            <p><strong>Journal:</strong> American Journal of Psychiatry (2022)</p>
+                            <div class="card-links">
+                                <a href="https://psychiatryonline.org/doi/full/10.1176/appi.ajp.20220304" target="_blank">[DOI Link]</a>
+                                <a href="docs/CV_KuldeepKumar_June2024.pdf" target="_blank">[PDF]</a> </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="publication">
-                    <a href="https://www.nature.com/articles/s41398-021-01490-9" target="_blank">
-                        Effects of eight neuropsychiatric copy number variants on human brain structure
-                        <img src="docs/TransPsy_CNVs_MRI_fig2.jpg" alt="Publication 2">
-                    </a>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="card-image"><img src="docs/TransPsy_CNVs_MRI_fig2.jpg" alt="Publication 2 Figure"></div>
+                        <div class="card-text">
+                            <h3>Effects of eight neuropsychiatric copy number variants on human brain structure</h3>
+                            <p><strong>Authors:</strong> Kumar, K., et al.</p>
+                            <p><strong>Journal:</strong> Translational Psychiatry (2021)</p>
+                             <div class="card-links">
+                                <a href="https://www.nature.com/articles/s41398-021-01490-9" target="_blank">[DOI Link]</a>
+                                <a href="docs/CV_KuldeepKumar_June2024.pdf" target="_blank">[PDF]</a> </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="publication">
-                    <a href="https://www.sciencedirect.com/science/article/pii/S1053811918306876" target="_blank">
-                        Multi-modal brain fingerprinting: A manifold approximation based framework
-                        <img src="docs/MultiModal_brain_fingerprint_Fig1.jpg" alt="Publication 3">
-                    </a>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="card-image"><img src="docs/MultiModal_brain_fingerprint_Fig1.jpg" alt="Publication 3 Figure"></div>
+                        <div class="card-text">
+                            <h3>Multi-modal brain fingerprinting: A manifold approximation based framework</h3>
+                            <p><strong>Authors:</strong> Kumar, K., et al.</p>
+                            <p><strong>Journal:</strong> NeuroImage (2018)</p>
+                             <div class="card-links">
+                                <a href="https://www.sciencedirect.com/science/article/pii/S1053811918306876" target="_blank">[DOI Link]</a>
+                                <a href="docs/CV_KuldeepKumar_June2024.pdf" target="_blank">[PDF]</a> </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="section youtube-video" id="presentation">
-            <h2>Select Presentation</h2>
-            <a href="https://vimeo.com/945775305/5f4ca6fc84?share=copy" target="_blank">
-                <img src="docs/SOBP2024_ppt_KK.jpg" alt="YouTube Video Thumbnail" class="youtube-thumbnail">
-            </a>
+
+        <div class="section" id="cv">
+            <h2>Curriculum Vitae</h2>
+            <p>You can download my full, up-to-date CV here.</p>
+            <p><a href="docs/CV_KuldeepKumar_June2024.pdf" target="_blank" style="font-weight:bold; font-size: 1.2em;">Download Full CV (PDF)</a></p>
         </div>
-        <div class="section twitter-feed" id="twitter-feed">
-            <h2>Twitter Feed</h2>
-            <a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/kkumar_iitkgp">Tweets by @kkumar_iitkgp</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <div id="connect">
+            <div class="flex-container">
+                <div class="flex-item section">
+                    <h2>Select Presentation</h2>
+                    <a href="https://vimeo.com/945775305/5f4ca6fc84?share=copy" target="_blank" class="presentation-thumbnail">
+                        <img src="docs/SOBP2024_ppt_KK.jpg" alt="Link to SOBP 2024 Presentation">
+                        <p style="text-align:center; font-weight:bold;">SOBP 2024: Click to watch on Vimeo</p>
+                    </a>
+                </div>
+                <div class="flex-item section">
+                    <h2>Connect on X (Twitter)</h2>
+                    <a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/kkumar_iitkgp?ref_src=twsrc%5Etfw">Tweets by kkumar_iitkgp</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
         </div>
     </div>
+    
+    <footer>
+        <p>&copy; 2025 Kuldeep Kumar | Website designed with assistance from an AI model.</p>
+    </footer>
+
     <script>
-        let currentIndex = 0;
-        const research = document.querySelectorAll('.research');
+        // --- SCRIPT FOR RESEARCH CAROUSEL ---
+        // FIX: Used 'researchIndex' instead of 'currentIndex' to avoid conflict.
+        let researchIndex = 0;
+        const researchItems = document.querySelectorAll('#research-carousel .carousel-item');
+        const totalResearchItems = researchItems.length;
 
         function showNextResearch() {
-            research[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % research.length;
-            research[currentIndex].classList.add('active');
+            if (totalResearchItems > 0) {
+                researchItems[researchIndex].classList.remove('active');
+                researchIndex = (researchIndex + 1) % totalResearchItems;
+                researchItems[researchIndex].classList.add('active');
+            }
+        }
+        
+        if (totalResearchItems > 1) {
+            setInterval(showNextResearch, 5000); // Change slide every 5 seconds
         }
 
-        setInterval(showNextResearch, 5000); // Change publication every 3 seconds
-    </script>
-    <script>
-        let currentIndex = 0;
-        const publications = document.querySelectorAll('.publication');
+        // --- SCRIPT FOR PUBLICATIONS CAROUSEL ---
+        // FIX: Used 'publicationIndex' instead of 'currentIndex' to avoid conflict.
+        let publicationIndex = 0;
+        const publicationItems = document.querySelectorAll('#publications-carousel .carousel-item');
+        const totalPublicationItems = publicationItems.length;
 
         function showNextPublication() {
-            publications[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % publications.length;
-            publications[currentIndex].classList.add('active');
+            if (totalPublicationItems > 0) {
+                publicationItems[publicationIndex].classList.remove('active');
+                publicationIndex = (publicationIndex + 1) % totalPublicationItems;
+                publicationItems[publicationIndex].classList.add('active');
+            }
         }
-
-        setInterval(showNextPublication, 5000); // Change publication every 3 seconds
+        
+        if (totalPublicationItems > 1) {
+            setInterval(showNextPublication, 5000); // Change slide every 5 seconds
+        }
     </script>
 </body>
 </html>
