@@ -29,6 +29,8 @@
         .article code { background: #f1f3f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
         .article hr { border: none; border-top: 1px solid #dee2e6; margin: 30px 0; }
         .article h3 { font-size: 1.1em; color: #343a40; }
+        .note { background: #f1f7ff; border-left: 4px solid #0056b3; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+        .caption { font-size: 0.92em; color: #6c757d; margin-top: -10px; }
         .backlink { margin-top: 30px; font-weight: bold; }
         footer { text-align: center; padding: 20px; color: #6c757d; font-size: 0.9em; }
     </style>
@@ -45,66 +47,128 @@
     <div class="container">
         <article class="article">
         <p><em>A whole-brain CRISPR atlas meets neuroimaging genetics.</em></p>
+
 <h2>Background: Wnt signalling pathway and developmental neuroscience</h2>
-<p>In 2002, Anjen Chenn and Christopher Walsh ran one of the cleaner experiments in developmental neuroscience. They engineered mice to express a stabilized form of β-catenin — the central protein of the Wnt signaling pathway, encoded by <em>CTNNB1</em> — in neural precursor cells. The precursor pool kept dividing instead of differentiating, and the mice grew enlarged brains with <strong>increased cortical surface area</strong> and folds resembling the sulci and gyri of higher mammals (Chenn &amp; Walsh, <em>Science</em> 2002). β-catenin, they argued, is a switch telling a precursor whether to keep cycling or become a neuron — and through that switch, it sets cortical size. The loss-of-function side matched: removing β-catenin from cortical precursors makes them differentiate prematurely (Woodhead et al., <em>J Neurosci</em> 2006).</p>
-<p>β-catenin doesn't act unopposed. Its levels are held down by <strong>APC</strong>, which targets it for degradation. This balance matters for the brain specifically: deleting APC from cortical progenitors floods them with β-catenin and disrupts cortical formation — and lowering β-catenin in those same APC-null cells rescues it (Nakagawa et al., <em>Genes &amp; Development</em> 2017). APC and β-catenin are a matched pair of opposing forces, and their balance — the "Wnt tone" — sets cortical development.</p>
-<p>This tug-of-war has been textbook for two decades. And it has always been a story about <strong>fetal cortical progenitors</strong>. Hold that thought.</p>
+
+<p>In 2002, Anjen Chenn and Christopher Walsh ran one of the cleaner experiments in developmental neuroscience. They engineered mice to express a stabilized form of β-catenin — the central protein of the Wnt signalling pathway, encoded by <em>CTNNB1</em> — in neural precursor cells. The precursor pool kept dividing instead of differentiating, and the mice grew enlarged brains with increased cortical surface area and folds resembling the sulci and gyri of higher mammals (Chenn &amp; Walsh, <em>Science</em> 2002). β-catenin, they argued, is a switch telling a precursor whether to keep cycling or become a neuron — and through that switch, it helps set cortical size.</p>
+
+<p>The loss-of-function side fits the same logic: removing β-catenin from cortical precursors pushes them toward premature differentiation (Woodhead et al., <em>J Neurosci</em> 2006). β-catenin also does not act alone. Its level is held down by <strong>APC</strong>, a core component of the destruction complex that targets β-catenin for degradation. This balance matters for the brain: deleting APC from cortical progenitors increases β-catenin signalling and disrupts cortical formation, and reducing β-catenin in those APC-null cells partially rescues the phenotype (Nakagawa et al., <em>Genes &amp; Development</em> 2017).</p>
+
+<p>APC and β-catenin are therefore a matched pair of opposing forces. Their balance — the Wnt “tone” — shapes cortical development. But the classic story is very specific: <strong>fetal cortical progenitors</strong>. Dividing cells. Embryonic cortex. Hold that thought.</p>
+
 <img src="figures/fig3_timeline.png" alt="Timeline: 2002 Walsh to 2026 atlas" style="width:100%; margin:20px 0; border-radius:8px;">
+<p class="caption">The point is not that Wnt biology is new. The point is where a new perturbation atlas now sees that logic.</p>
+
 <h2>Neuroimaging genetics: GWAS catches the pathway — but not the players</h2>
-<p>Fast-forward. Human genetics catches up to Walsh, at population scale.</p>
-<p>Grasby et al. (2020) run a large GWAS of cortical structure and find, in their pathway analysis, that <strong>the entire Wnt signaling pathway is enriched for cortical surface area</strong> — KEGG Wnt signaling at p = 7.3e-09, alongside dozens of Wnt gene sets, canonical and non-canonical, all FDR-significant (their Table S10). This is the population-scale echo of Walsh: Wnt underlies surface area, exactly as the mouse work predicted.</p>
-<p>But here's the catch. That signal is a <em>pathway</em> signal — distributed across many Wnt genes, each contributing a little. At the level of individual genes, the core Wnt machinery barely registers. <strong>APC is absent from Grasby's gene-level list. So is CTNNB1. So are AXIN, GSK3B, TCF7L2, LEF1.</strong> The two central antagonists of the Wnt pathway — the pair whose balance Walsh's β-catenin work and Nakagawa's APC work together define — never surface as individual cortical surface-area genes.</p>
-<p>Then, in 2024, they surface somewhere else. Garcia-Marin and colleagues GWAS intracranial and subcortical volumes, and <em>both</em> CTNNB1 and APC appear as genome-wide-significant genes — for <strong>intracranial volume</strong> (ICV), not cortical surface area. Two Wnt antagonists, both nominated by common variants for brain size.</p>
-<p>And both are dropped. I went through Garcia-Marin's supplement gene by gene: CTNNB1 and APC appear only in the raw MAGMA list (their Supplementary Table 5). Neither survives into the TWAS (ST6), the developmental eQTL analysis (ST7), or the single-cell integration (ST8). They're flagged as associated with brain size, then set aside — no cell type, no pathway, no mention of Wnt, and no connection back to the 20-year-old mechanism that has their names all over it.</p>
-<p>So as of 2024, the two central genes of the classic brain-size pathway sit in a GWAS table with no cellular interpretation — the pathway known, the players unplaced.</p>
+
+<p>Fast-forward. Human genetics catches up to this developmental biology at population scale.</p>
+
+<p>Grasby et al. (2020) ran a large GWAS of cortical structure and found, in pathway analyses, that <strong>Wnt signalling is enriched for cortical surface area</strong> — including KEGG Wnt signalling at p = 7.3 × 10<sup>−9</sup> in their Supplementary Table 10. This is the population-scale echo of the developmental mouse work: Wnt biology is related to cortical surface area.</p>
+
+<p>But this is a pathway-level signal. At the individual-gene level, the core Wnt antagonists are not the story. In Grasby’s significant MAGMA gene table, <em>APC</em> and <em>CTNNB1</em> are absent; so are other canonical Wnt components such as <em>AXIN1/2</em>, <em>GSK3B</em>, <em>TCF7L2</em>, and <em>LEF1</em>. So the pathway is visible, but the central players from the developmental experiments are not individually nominated as cortical surface-area genes.</p>
+
+<p>Then, in 2024, the two players surface somewhere else. Garcia-Marin and colleagues performed a GWAS of intracranial and subcortical volumes. In their significant MAGMA gene table, <em>CTNNB1</em> and <em>APC</em> both appear for <strong>intracranial volume</strong> (ICV), not cortical surface area. Two Wnt antagonists, both nominated by common variants for brain size.</p>
+
+<p>Importantly, they are not carried forward by that paper’s main mechanistic follow-up layers. I checked the Garcia-Marin supplement gene by gene: <em>CTNNB1</em> and <em>APC</em> appear in Supplementary Table 5, but neither appears in the significant TWAS table, the developmental eQTL table, or the single-cell integration table. This is not a criticism of the GWAS paper; it is exactly the gap that association studies often leave. The genes are associated with a brain MRI trait, but the supplement does not tell us what happens when the genes are perturbed, which cell type is most affected, or whether the two genes push biology in opposite directions.</p>
+
+<p>So by 2024, the situation was oddly satisfying and frustrating at the same time: the pathway was known, the genes were nominated for ICV, but the cellular consequence was still missing.</p>
+
 <h2>Enter Perturb-seq map of the entire mammalian brain, that has never existed before</h2>
-<p>This year, that changed, because of a resource with no precedent.</p>
-<p>Shi et al. (2026) built the first <strong>genome-scale, in-vivo Perturb-seq map of the entire mammalian brain</strong>. Sit with the scale of that for a moment. They knocked out roughly 2,000 disease-associated genes — one at a time, each with CRISPR, <em>in the living brain</em> — and read out the transcriptional consequence of every knockout in every cell type across <strong>7.7 million single cells</strong> spanning the whole brain. Not a dish. Not a region. Not expression correlations. The actual, causal, cell-type-resolved answer to "what happens to each cell type when this gene is gone," for two thousand genes, in vivo, brain-wide. Nothing on this scale had been done in any mammal. It is, flatly, a landmark.</p>
-<p>And the paper earns the claim with two demonstrations of what that resolution buys you.</p>
-<p><strong>First — intervention logic.</strong> Knock out <em>Grin2a</em> and knock out <em>Grin2b</em>, two closely related NMDA-receptor subunits, and you get <strong>opposite</strong> transcriptional programs in the same neurons. Near-identical genes, mirror-image consequences — a distinction invisible to anything but a screen that reads direction, cell type by cell type.</p>
-<p><strong>Second — cell-type specificity.</strong> Among the highest-impact neurodevelopmental genes, effects are not uniform. Knock out <em>Stxbp1</em> (a synaptic vesicle gene) and the hit lands on <strong>cortical</strong> L4/5 IT neurons, down-regulating synaptic genes like <em>Nrxn2</em> and <em>Grin2b</em>. Knock out <em>Ctnnb1</em> (the Wnt effector) and the strongest effect is instead in the <strong>thalamus</strong>. Their conclusion: "distinct disease genes perturb different neuronal populations and molecular pathways, an architecture that becomes visible only at the scale and cellular resolution of this screen."</p>
-<p>Two clean, credible results establishing that this resource sees things nothing before it could. And in that second example — CTNNB1, thalamus — the neuroimaging story is hiding.</p>
+
+<p>Shi et al. (2026) built a genome-scale, in-vivo Perturb-seq map of the mouse brain. The scale is worth pausing on: 1,947 disease-relevant genes targeted with CRISPR, 7.7 million postnatal mouse brain nuclei profiled by single-nucleus RNA-seq, and perturbation effects mapped across major neuronal populations and brain regions. This is not an expression atlas and not a correlation study. It asks a different question: <strong>what happens to a specific cell type when a specific gene is lost?</strong></p>
+
+<p>The paper’s own examples show why this matters.</p>
+
+<p><strong>First — intervention logic.</strong> <em>Grin2a</em> and <em>Grin2b</em> encode closely related NMDA-receptor subunits. The atlas shows that perturbing the two genes can produce divergent, even directionally opposing, transcriptional programs in overlapping cortical glutamatergic neurons. That is a distinction a static expression atlas cannot make: related genes can have different downstream consequences.</p>
+
+<p><strong>Second — cell-type specificity.</strong> The paper contrasts <em>Stxbp1</em> and <em>Ctnnb1</em>. <em>Stxbp1</em>, a synaptic vesicle release gene, has its strongest perturbation burden in cortical L4/5 IT neurons. <em>Ctnnb1</em>, the Wnt effector, has its strongest signal in a thalamic glutamatergic type. The resource therefore does not just say “this is a disease gene”; it gives each gene a cellular context and a downstream transcriptional program.</p>
+
+<img src="figures/fig4_three_layer_bridge.png" alt="Three-layer bridge from Shi atlas examples to APC CTNNB1 neuroimaging result" style="width:100%; margin:20px 0; border-radius:8px;">
+<p class="caption">The first two layers are the Shi et al. logic; the third is the neuroimaging bridge from re-analysis.</p>
+
 <h2>Perturb-seq map of the entire mammalian brain meets human neuroimaging genetics</h2>
-<p>A simple question. We have hundreds of genes that human GWAS links to brain structure. This atlas knocked out ~2,000 disease genes. <strong>Where do the two sets meet, and what does the atlas say about the genes they share?</strong> In particular: can it supply the cellular interpretation the GWAS papers couldn't — a cell type, a direction, a pathway — for genes like CTNNB1 that were flagged and dropped?</p>
+
+<p>My question was simple. We have hundreds of genes that human GWAS links to brain structure. This atlas perturbed nearly two thousand disease-relevant genes. <strong>Where do the two sets meet, and what does the atlas add?</strong></p>
+
+<p>The broad overlap is useful, but it is not yet a complete biological story. I found 666 unique significant neuroimaging-GWAS genes across Grasby cortical structure and Garcia-Marin ICV/subcortical volume. Of these, 46 were also targeted in the Shi atlas. Using the raw S6A differential-expression table and defining a signal as at least one FDR-significant DEG in any atlas cell type, 36 of those 46 showed at least one detectable DEG. But this is not the same as saying 36 genes have interpretable neuroimaging mechanisms. Many are broad regulators, many have very small or single-cell-type DEG counts, and several have independent mechanistic clues already in the Garcia-Marin supplement: for example, among the 46 overlap genes, <em>CRHR1</em> and <em>TBX6</em> appear in the Garcia-Marin TWAS table, <em>KANSL1</em> appears in the developmental eQTL table, and <em>CRHR1</em> appears in the single-cell integration table.</p>
+
+<p>This is why I do not think the clean blog story is “the atlas explains all MRI GWAS genes.” It does not. The clean story is narrower: <strong>the atlas provides a particularly interpretable perturbational bridge for the APC–CTNNB1 Wnt pair</strong>, precisely because those two genes are biologically paired, both are ICV MAGMA genes, neither is resolved by the Garcia-Marin mechanistic follow-up tables, and their perturbation effects can be tested against known Wnt antagonism.</p>
+
+<img src="figures/fig1_funnel.png" alt="Funnel: neuroimaging GWAS genes overlapping with the Shi perturbation atlas" style="width:100%; margin:20px 0; border-radius:8px;">
+<p class="caption">The overlap is a starting point, not a mechanism. The APC–CTNNB1 pair is the cleanest example because it has an internal biological positive control.</p>
+
 <h2>What the Perturb-seq map of the entire mammalian brain brings to the table</h2>
-<p>CTNNB1 is the ICV gene Garcia-Marin flagged and dropped. Shi et al., not thinking about GWAS at all, show its perturbation effect is thalamus-specific — 383 significant DEGs in one thalamic glutamatergic type (151 TH Prkcd/Grin2c), almost nothing elsewhere. That alone answers Garcia-Marin's open question: a common-variant brain-size signal gets a cellular address, and it isn't the cortex.</p>
-<p>Then it goes one step past what the atlas paper reports. In that <em>same</em> thalamic neuron, <strong>APC</strong> — CTNNB1's antagonist, and also an ICV GWAS gene — runs the <strong>mirror-image</strong> program.</p>
+
+<p><em>CTNNB1</em> is one of the ICV genes from Garcia-Marin. Shi et al. highlight <em>Ctnnb1</em> because its perturbation is unusually cell-type-specific: in the S6A differential-expression table, <em>Ctnnb1</em> has 383 FDR-significant DEGs in one thalamic glutamatergic type, labelled “151 TH Prkcd Grin2c Glut,” and very little elsewhere. In the authors’ S6B potency summary, <em>Ctnnb1</em> is also assigned to the signalling/metabolism group, with its top affected cell type in the same thalamic population.</p>
+
+<p>That already gives the ICV association something the GWAS supplement did not: a plausible cellular context. But the more useful test is whether the atlas recovers known pathway directionality.</p>
+
+<p>In the same thalamic glutamatergic neuron, <strong><em>Apc</em></strong> — the β-catenin antagonist, and also an ICV MAGMA gene — shows the mirror-image program. Re-analysing the S6A DEG table, I find 92 genes differentially expressed after both <em>Apc</em> and <em>Ctnnb1</em> perturbation in this cell type; 86% move in opposite directions; and the gene-level Pearson correlation of log-fold changes is −0.78. Canonical Wnt targets behave as expected: <em>Notum</em>, <em>Axin2</em>, and <em>Wnt9b</em> go up when <em>Apc</em> is lost and down when <em>Ctnnb1</em> is lost, while <em>Fzd8</em> moves the other way.</p>
+
 <p><img alt="CTNNB1 through-line: paper result, neuroimaging bridge, APC positive control" src="figures/fig2_ctnnb1_apc_throughline.png" /></p>
-<p>Ninety-two genes are differentially expressed by both knockouts; 86% move in opposite directions; the gene-level correlation is −0.78. The canonical Wnt targets drive it: <em>Notum</em>, <em>Axin2</em>, and <em>Wnt9b</em> go up when APC is lost and down when CTNNB1 is lost; <em>Fzd8</em> does the reverse. This is precisely the antagonism the developmental literature predicts — APC-null pushes β-catenin up, CTNNB1-null pushes it down, so their programs should oppose. The atlas recovers it, at gene-level resolution, in vivo.</p>
+
+<p>This is the key point: the atlas does not discover that APC and β-catenin antagonize each other. That is textbook Wnt biology. Instead, the atlas recovers that antagonism, in the right direction, inside a specific postnatal thalamic neuron. That makes the APC–CTNNB1 pair a useful positive control. It tells us that this perturbation resource can recover known pathway logic in vivo, while also giving GWAS-nominated genes a cell-type-resolved consequence.</p>
+
 <h2>Remarkable — and here's exactly why</h2>
-<p>This is the Walsh–Nakagawa tug-of-war, the 20-year-old textbook, reappearing. The mechanism is not new. <strong>What's new is where and when the atlas catches it.</strong></p>
-<p>The entire classic literature — Walsh, Nakagawa, and everything between — is about <em>fetal cortical progenitors</em>: dividing cells building the cortex before birth. The atlas shows the same Wnt antagonism running as an active, sign-opposed transcriptional program in <strong>post-mitotic adult thalamic neurons</strong>, read out at P37–P44. A developmental switch, studied for two decades in the embryonic cortex, is still operating — in a different structure, a different cell type, and a different life-stage than anyone had looked. And it does so in two genes that human common-variant GWAS ties to brain size, that Grasby's pathway analysis pointed at without naming, and that Garcia-Marin named without placing.</p>
-<p>Three separate lines of evidence — a 2002 developmental experiment, a 2020 pathway enrichment, a 2024 ICV hit — converge on a cell type none of them identified, supplied by a resource none of them had.</p>
+
+<p>The Walsh–Nakagawa mechanism is not new. Wnt signalling and APC/β-catenin antagonism are not new. The interesting part is the setting.</p>
+
+<p>The classic work is fetal and cortical: progenitors expanding the cortex before birth. The Shi atlas is postnatal and neuronal: P37–P44 mouse brain nuclei, enriched for NeuN-positive cells. The APC–CTNNB1 antagonism appears not in a fetal cortical progenitor, but in a thalamic glutamatergic neuron. That does not prove the human ICV association acts through that neuron. It does show that a pathway known for cortical development has a measurable, sign-opposed perturbational footprint in a different cell type and life stage.</p>
+
+<p>That is exactly the value of the resource for human neuroimaging genetics. GWAS gives association. Pathway analysis gives enrichment. TWAS/eQTL/single-cell integration can suggest regulatory intermediates. But an in-vivo perturbation atlas adds a different layer: <strong>directional consequence</strong>. It can show whether two genes in the same pathway push the transcriptome in the same direction, in opposite directions, or in completely different cell types.</p>
+
 <h2>The pinch of salt</h2>
-<p>That is a genuinely exciting convergence. It is also one that has to be read carefully, because almost every interpretive step crosses a boundary that should make a neuroimager cautious.</p>
-<p><strong>Species.</strong> This is a mouse atlas. Mouse–human correspondence is strongest subcortically and in cerebellum, and weakest exactly where we care most — the cortex. Walsh's own framing was that β-catenin overexpression makes a mouse cortex <em>more human-like</em>; the reverse caveat is that reading human cortical biology off a mouse is precisely where it's most fragile.</p>
-<p><strong>Timepoint.</strong> The atlas reads adult neurons. The Walsh–Nakagawa mechanism lives in the fetal ventricular zone, in cells that no longer exist at readout. So the adult thalamic signal cannot be assumed to <em>be</em> the developmental brain-size mechanism — it may be an echo of the same pathway in a different job. The ICV GWAS association could act through the fetal cortical mechanism, the adult thalamic one, or both. This atlas cannot distinguish them.</p>
-<p><strong>The cortex is dark, and partly for a boring reason.</strong> Zoom out from CTNNB1: of 666 neuroimaging-GWAS genes, only 46 were perturbed here, and only 11 produced a detectable effect — every one subcortical or ICV, not one cortical surface-area gene.</p>
-<p><img alt="Funnel: 666 neuroimaging GWAS genes narrow to 11 with a signal, all subcortical" src="figures/fig1_funnel.png" /></p>
-<p>Some of that silence is real biology (timing, species). But some is method: whole-brain DEG calling is dominated by between-region transcriptional variance, so subcortical signal swamps within-cortex signal (cf. Li et al., <em>Science</em> 2018). DEG burden is a subcortex-favoring metric almost by construction. So "no cortical signal" is partly a statement about the measurement, not only the biology — and the thalamic localization of CTNNB1 should be held with that in mind.</p>
-<p><strong>And this particular result is my own analysis.</strong> The APC/CTNNB1 correlation is computed from Supplementary Data S6A; it is not in the Shi manuscript. It replicates a known relationship, which is reassuring, but the numbers are mine and should be independently verified before anyone leans on them.</p>
-<p><strong>Silent ≠ unimportant.</strong> A gene quiet on knockout may be redundant, lowly expressed in mouse, or simply caught in the wrong developmental window — not irrelevant.</p>
+
+<p>That convergence is exciting. It also needs to be held at arm’s length.</p>
+
+<p><strong>Species.</strong> This is a mouse atlas. Some neuronal identities and gene programs are conserved across mammals, but human cortex has expanded and specialized in ways that make direct translation fragile. Cross-species comparisons of brain cell types — for example, work from the Allen Brain Cell Atlas ecosystem and human/mouse/marmoset comparative studies — are essential before treating a mouse cell-type assignment as a human mechanism.</p>
+
+<p><strong>Timepoint.</strong> The atlas reads postnatal P37–P44 neurons. The classic brain-size mechanism lives in fetal cortical progenitors. Therefore the thalamic <em>Ctnnb1</em>/<em>Apc</em> signal could be part of the ICV biology, an adult/postnatal echo of a developmental pathway, or simply the cell type in which this perturbation is most measurable. The atlas cannot distinguish these possibilities on its own.</p>
+
+<p><strong>Cell-type and region bias.</strong> A whole-brain single-cell perturbation assay is not neutral with respect to region, abundance, expression, viral tropism, or statistical power. The Shi atlas itself notes constraints from AAV tropism, NeuN enrichment, a single timepoint, and RNA-seq-only readouts. More generally, whole-brain transcriptomic variation is strongly structured by region and cell type; a DEG-burden metric may favor broad, high-expression, or subcortically detectable programs over subtle within-cortex developmental effects.</p>
+
+<p><strong>The overlap is not the mechanism.</strong> Of the 46 MRI GWAS genes targeted in the atlas, 36 have at least one FDR-significant DEG in S6A, including several cortical surface-area genes. So it would be wrong to say that cortical GWAS genes are silent. The better conclusion is that many overlap genes have some perturbational signal, but only a smaller subset gives a high-burden, interpretable, biologically constrained story. APC–CTNNB1 is one such case because the pair has a known antagonistic relationship.</p>
+
+<p><strong>And this particular result is my own re-analysis.</strong> The APC–CTNNB1 correlation is computed from Supplementary Data S6A. It is not a claim made in the Shi manuscript. It is reassuring because it recovers known Wnt directionality, but the analysis should be independently re-run before anyone leans on the exact numbers.</p>
+
+<p><strong>Silent does not mean unimportant.</strong> A gene can be quiet in this assay because it is redundant, lowly expressed in mouse, active in the wrong developmental window, poorly sampled in a relevant cell type, or invisible to RNA-seq despite a morphological effect.</p>
+
 <h2>What this opens up</h2>
-<p>Held at arm's length, the finding is less an answer than a well-posed question — several, actually, each sharper than GWAS alone could make them.</p>
-<p><strong>Timing.</strong> Is the brain-size effect fetal, adult, or both? The clean test is an earlier-timepoint atlas. The Walsh–Nakagawa mechanism should appear in its <em>canonical</em> form — cortical, progenitor, proliferative — in an embryonic or early-postnatal whole-brain screen, and the CTNNB1/APC switch would show up in the cortex rather than as an adult thalamic echo. That single design choice would tell us whether the thalamic signal is the mechanism or a shadow of it.</p>
-<p><strong>Cell-type localization.</strong> Why thalamus? Is the adult thalamic Wnt program a functional role, a developmental remnant, or an artifact of the metric? Cross-referencing against a human whole-brain single-cell atlas (Siletti et al., 2023) would test whether the thalamic assignment has any human counterpart, or is mouse-specific.</p>
-<p><strong>Spatial localization, beyond the pathway.</strong> Grasby told us Wnt matters for surface area; the atlas tells us CTNNB1 acts in a specific thalamic type. Neither tells us which <em>structure's volume</em> the gene actually builds. Moving from "which cell type responds" to "which regional phenotype results" is the open frontier — and it needs perturbation data joined to morphology, not transcriptomics alone.</p>
+
+<p>Held carefully, the finding is less an answer than a sharper question.</p>
+
+<p><strong>Timing.</strong> Is the relevant brain-size biology fetal, postnatal, or both? An earlier developmental perturbation atlas would be the clean test. If the classic Wnt mechanism is the route from <em>CTNNB1</em>/<em>APC</em> to brain size, an embryonic or early postnatal screen should recover a stronger cortical progenitor signal.</p>
+
+<p><strong>Cell-type localization.</strong> Why thalamus? Is the postnatal thalamic Wnt program a functional role, a developmental remnant, or a measurement bias? Human whole-brain single-cell atlases such as Siletti et al. (2023), and cross-species reference atlases such as Yao et al. and Bakken et al., provide obvious next checks.</p>
+
+<p><strong>Spatial localization beyond pathway.</strong> Grasby tells us Wnt biology is relevant to cortical surface area. Garcia-Marin nominates <em>CTNNB1</em> and <em>APC</em> for ICV. The perturbation atlas tells us where loss of these genes produces a transcriptional consequence. None of these alone tells us which anatomical structure changes in response to perturbation. The next bridge is perturbation plus morphology: gene perturbation, cell-type consequence, and brain-structure phenotype in the same experimental frame.</p>
+
 <h2>What would need to be done</h2>
-<p>The honest shortlist: an <strong>earlier-developmental</strong> whole-brain perturbation atlas, to reach cortical-expansion biology and test the timing question directly; <strong>within-cortex</strong> rather than whole-brain contrasts, or a cortex-favoring effect metric, to rescue cortical signal from subcortical dominance; and <strong>human cross-validation</strong> against single-cell references, to check which mouse assignments survive the species gap. None is trivial — embryonic Perturb-seq at whole-brain scale is a serious undertaking — but the cortical silence is, in effect, a specification for the next dataset.</p>
+
+<p>The honest shortlist is clear: an earlier-developmental whole-brain perturbation atlas; within-cortex analyses or cortex-sensitive perturbation metrics; cross-validation against human whole-brain single-cell references; and eventually perturbation joined to imaging or morphology. None is trivial. But this is exactly what makes the Shi resource so valuable. It does not end the story; it defines the next experiment.</p>
+
 <h2>A remarkable resource</h2>
-<p>Whatever its limits for the cortex today, this atlas is a landmark: the first genome-scale, whole-brain, in-vivo perturbation map in a mammal, and a genuine shift in what neuroimaging genetics can ask. GWAS tells us a gene is <em>linked</em> to a trait. A perturbation atlas tells us what actually <em>happens</em> when the gene is gone — in which cells, in which direction, and whether two genes push the same lever opposite ways. For a 20-year-old brain-size gene that its own GWAS paper couldn't place, the atlas quietly supplied the missing cell — and reunited it with a classic mechanism nobody had connected across the gap. As these screens reach earlier timepoints and human-relevant models, that will stop being a lucky find and start being routine. This is the beginning of a new instrument for the field, and it is a genuinely thrilling one.</p>
+
+<p>For neuroimaging genetics, this atlas is a new kind of instrument. GWAS tells us that a gene is linked to a trait. Pathway analysis tells us that a biological process is enriched. Single-cell expression tells us where a gene is normally expressed. Perturb-seq asks what happens when the gene is gone.</p>
+
+<p>The APC–CTNNB1 example is narrow, but that is its strength. It connects a classic developmental mechanism, a pathway-level cortical GWAS signal, an ICV gene-level GWAS signal, and a new postnatal whole-brain perturbation readout. The result is not proof of a human mechanism. It is a functional hypothesis with an internal positive control: known Wnt antagonism recovered in the right direction, in vivo, at cell-type resolution.</p>
+
+<p>That is the unique value of the atlas. It can turn a gene in a GWAS table into a perturbational consequence. For a field full of associated genes waiting for biological interpretation, that is a very big deal.</p>
+
 <hr />
+
 <h3>Notes on data and methods</h3>
 <ul>
-<li><strong>Reference:</strong> Shi et al. (2026, bioRxiv 2026.03.16.711480), Genome-scale functional mapping of the mammalian whole brain with in vivo Perturb-seq.</li>
-<li><strong>The Perturb-seq resource:</strong> Genome-scale whole-brain in-vivo Perturb-seq; ~2,000 gene knockouts, 7.7M cells. Per-cell-type Wilcoxon DEGs from Supplementary Data S6; DEG burden/annotations from S9. The Grin2a/Grin2b and Stxbp1/Ctnnb1 examples are the authors'. The APC/CTNNB1 gene-level correlation is my own analysis of S6A (Pearson r on shared significant DEGs, padj &lt; 0.05, cell type "151 TH Prkcd Grin2c Glut").</li>
-<li><strong>Neuroimaging GWAS:</strong> Grasby et al. (2020, Science) — cortical SA/TH; Garcia-Marin et al. (2024, Nature Genetics) — ICV/subcortical.</li>
-<li><strong>The Neuroimaging GWAS resource:</strong> Grasby et al. (2020, Science) — cortical SA/TH MAGMA genes (ST6), Wnt pathway enrichment (ST10, KEGG Wnt p=7.3e-09); APC/CTNNB1 verified absent from ST6. Garcia-Marin et al. (2024, Nature Genetics) — ICV/subcortical MAGMA genes (ST5); CTNNB1/APC present in ST5, verified absent from mechanistic ST6–ST8.</li>
-<li><strong>Classic references:</strong> Chenn &amp; Walsh (2002, Science 297:365–369); Woodhead et al. (2006, J Neurosci 26:12620); Nakagawa et al. (2017, Genes Dev 31:1679, "APC sets the Wnt tone").</li>
-<li><strong>Atlas:</strong> Hugging Face perturbai/wholebrain_crispr_atlas.</li>
-<li><strong>Note:</strong> Quantitative statements are computed from the study's supplementary data (S6, S7, S9); each paper's own claims are attributed to it. Exploratory write-up, not peer-reviewed.</li>
+<li><strong>Reference:</strong> Shi et al. (2026, bioRxiv 2026.03.16.711480), <em>Genome-scale functional mapping of the mammalian whole brain with in vivo Perturb-seq</em>.</li>
+<li><strong>The Perturb-seq resource:</strong> Genome-scale, whole-brain, in-vivo Perturb-seq; 1,947 target genes and 7.7M postnatal mouse brain nuclei. Per-cell-type Wilcoxon DEGs were taken from Supplementary Data S6A; potency summaries from S6B; gene-level annotations and disorder annotations from S9.</li>
+<li><strong>Neuroimaging GWAS:</strong> Grasby et al. (2020, <em>Science</em>) for cortical surface area/thickness; Garcia-Marin et al. (2024, <em>Nature Genetics</em>) for ICV and subcortical volumes.</li>
+<li><strong>Overlap audit:</strong> 666 unique neuroimaging-GWAS genes from Grasby ST6 and Garcia-Marin ST5; 46 overlap with Shi perturbation targets; 36 have at least one FDR &lt; 0.05 DEG in S6A. Among the 46 overlap genes, Garcia-Marin mechanistic follow-up tables contain <em>CRHR1</em> and <em>TBX6</em> in TWAS, <em>KANSL1</em> in developmental eQTL, and <em>CRHR1</em> in single-cell integration. <em>APC</em> and <em>CTNNB1</em> are absent from those three follow-up tables.</li>
+<li><strong>APC–CTNNB1 re-analysis:</strong> In cell type “151 TH Prkcd Grin2c Glut,” <em>Apc</em> and <em>Ctnnb1</em> share 92 FDR-significant DEGs; 86% move in opposite directions; Pearson r = −0.78 across shared log-fold changes. This is my analysis of S6A, not a claim made by the Shi manuscript.</li>
+<li><strong>Classic Wnt references:</strong> Chenn &amp; Walsh (2002, <em>Science</em> 297:365–369); Woodhead et al. (2006, <em>J Neurosci</em> 26:12620–12630); Nakagawa et al. (2017, <em>Genes &amp; Development</em> 31:1679–1692).</li>
+<li><strong>Caveat references:</strong> Siletti et al. (2023, <em>Science</em>) for human whole-brain cell-type diversity; Yao et al. (2023, <em>Nature</em>) for whole-mouse-brain cell taxonomy; Bakken et al. (2021, <em>Nature</em>) for cross-species cortical cell-type comparisons; Nowakowski et al. (2017, <em>Science</em>) and Polioudakis et al. (2019, <em>Neuron</em>) for human cortical developmental cell states.</li>
+<li><strong>Note:</strong> Exploratory blog post, not peer-reviewed. Corrections and feedback welcome.</li>
 </ul>
-<p><em>Corrections and feedback welcome.</em></p>
+
         <p class="backlink"><a href="index.html">&larr; Back to all posts</a></p>
         </article>
     </div>
