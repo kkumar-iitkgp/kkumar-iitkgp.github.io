@@ -24,9 +24,17 @@
         .post-entry { border-bottom: 1px solid #e9ecef; padding-bottom: 25px; margin-bottom: 25px; }
         .post-entry:last-child { border-bottom: none; }
         .post-date { color: #6c757d; font-size: 0.9em; }
-        .post-title { font-size: 1.4em; margin: 5px 0; }
+        .post-title { font-size: 1.4em; margin: 5px 0; display: inline-block; }
         .post-excerpt { color: #495057; margin-top: 8px; }
         footer { text-align: center; padding: 20px; color: #6c757d; font-size: 0.9em; }
+        @media (max-width: 760px) {
+            .container { width: auto; margin: 10px auto; padding: 0 12px; }
+            .section { padding: 26px 20px; }
+            .header { padding: 16px 20px; align-items: flex-start; gap: 10px; }
+            .header h1 { font-size: 1.35em; }
+            .nav-buttons { gap: 6px; }
+            .nav-buttons a { padding: 7px 9px; }
+        }
     </style>
 </head>
 <body>
@@ -43,17 +51,22 @@
             <h2>Blog</h2>
             <p>Notes and perspectives on neuroimaging, genetics, and the tools reshaping how we connect them.</p>
 
-
             <div class="post-entry">
-                <div class="post-date">June 12, 2026</div>
-                <a class="post-title" href="lake-conference-mental-health-2026.html">When a conference makes the whole field feel connected</a>
-                <p class="post-excerpt">Reflections from The Neurobiology of Mental Health meeting at Lake Thun: a rare gathering where developmental neuroscience, psychiatric genetics, brain atlases, white matter, organoids, circuits and therapeutic translation flowed into one connected scientific story.</p>
+                <div class="post-date">July 29, 2026</div>
+                <a class="post-title" href="brain-organoids-cnvs.html">What can brain organoids tell us about CNVs?</a>
+                <p class="post-excerpt">Brain organoids offer a controlled window into how genomic dosage alters early human neurodevelopment. Using 16p11.2 and recent cross-mutation organoid studies as examples, this post asks what these models genuinely add to CNV, psychiatric, and neuroimaging genetics—and where their evidence should stop.</p>
             </div>
 
             <div class="post-entry">
                 <div class="post-date">July 9, 2026</div>
                 <a class="post-title" href="perturb-atlas-neuroimaging.html">A 20-year-old brain-size gene, a whole-brain CRISPR atlas, and the cell type nobody was looking at</a>
                 <p class="post-excerpt">Two decades ago, Chenn &amp; Walsh showed &beta;-catenin sets cortical size; later work established APC as its Wnt-pathway antagonist. GWAS caught the pathway &mdash; but never these two genes individually, and never with a cell type. The first genome-scale, whole-brain, in-vivo Perturb-seq atlas quietly supplies the missing piece, in a structure and life-stage the classic work never reached.</p>
+            </div>
+
+            <div class="post-entry">
+                <div class="post-date">June 12, 2026</div>
+                <a class="post-title" href="lake-conference-mental-health-2026.html">When a conference makes the whole field feel connected</a>
+                <p class="post-excerpt">Reflections from The Neurobiology of Mental Health meeting at Lake Thun: a rare gathering where developmental neuroscience, psychiatric genetics, brain atlases, white matter, organoids, circuits and therapeutic translation flowed into one connected scientific story.</p>
             </div>
 
         </div>
