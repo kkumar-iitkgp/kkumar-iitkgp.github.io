@@ -1,95 +1,288 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Description" content="A perspective on what brain organoids can and cannot tell us about copy-number variants, psychiatric genetics, and neuroimaging.">
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.6">
-  <style type="text/css">
-    body {background-color: #f6f7f9}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #272c31; -webkit-text-stroke: #272c31}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.4px 'Helvetica Neue'; color: #59626a; -webkit-text-stroke: #59626a}
-    p.p5 {margin: 0.0px 0.0px 32.0px 0.0px; font: 13.4px 'Helvetica Neue'; color: #393f45; -webkit-text-stroke: #393f45}
-    p.p6 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #272c31; -webkit-text-stroke: #272c31}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #272c31; -webkit-text-stroke: #272c31; background-color: #eef2f7}
-    p.p12 {margin: 0.0px 0.0px 10.8px 0.0px; text-align: center; font: 10.8px 'Helvetica Neue'; color: #59626a; -webkit-text-stroke: #59626a}
-    li.li10 {margin: 0.0px 0.0px 10.0px 0.0px; font: 11.5px 'Helvetica Neue'; color: #0640a4; -webkit-text-stroke: #0640a4}
-    li.li11 {margin: 0.0px 0.0px 10.0px 0.0px; font: 11.5px 'Helvetica Neue'; color: #272c31; -webkit-text-stroke: #272c31}
-    span.s1 {font-kerning: none; background-color: #ffffff}
-    span.s2 {font: 15.1px 'Helvetica Neue'; font-kerning: none; color: #59626a; background-color: #ffffff; -webkit-text-stroke: 0px #59626a}
-    span.s3 {font: 12.0px 'Helvetica Neue'; font-kerning: none}
-    span.s4 {font: 13.4px 'Helvetica Neue'; font-kerning: none; color: #0640a4; -webkit-text-stroke: 0px #0640a4}
-    span.s5 {font-kerning: none}
-    span.s6 {color: #272c31; background-color: #ffffff; -webkit-text-stroke: 0px #000000}
-    span.s7 {font-kerning: none; color: #272c31; background-color: #ffffff; -webkit-text-stroke: 0px #272c31}
-    span.s8 {font-kerning: none; color: #0640a4; -webkit-text-stroke: 0px #0640a4}
-    span.s9 {background-color: #ffffff; -webkit-text-stroke: 0px #000000}
-    span.s10 {font: 11.5px 'Helvetica Neue'; font-kerning: none; color: #0640a4; -webkit-text-stroke: 0px #0640a4}
-    span.s11 {font: 10.8px 'Helvetica Neue'; font-kerning: none; color: #0640a4; background-color: transparent; -webkit-text-stroke: 0px #0640a4}
-    ol.ol1 {list-style-type: decimal}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A perspective on what brain organoids can and cannot tell us about copy-number variants, psychiatric genetics, and neuroimaging.">
+    <title>What can brain organoids tell us about CNVs? | Kuldeep Kumar, Ph.D.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+            line-height: 1.7;
+        }
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #0056b3;
+            line-height: 1.3;
+        }
+        h1 {
+            font-size: 2.25em;
+            margin: 0 0 24px 0;
+        }
+        h2 {
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 10px;
+            margin-top: 42px;
+        }
+        p {
+            margin: 0 0 18px 0;
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #003d82;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-bottom: 3px solid #0056b3;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            color: #343a40;
+        }
+        .header h1 span {
+            font-weight: 400;
+            font-size: 0.7em;
+            color: #6c757d;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-buttons a {
+            padding: 8px 15px;
+            color: #343a40;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-buttons a:hover {
+            background-color: #0056b3;
+            color: #ffffff;
+        }
+        .article {
+            padding: 40px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .post-date {
+            color: #6c757d;
+            font-size: 0.9em;
+            margin: -12px 0 28px 0;
+        }
+        .dek {
+            color: #495057;
+            font-size: 1.05em;
+            margin-bottom: 28px;
+        }
+        blockquote {
+            margin: 26px 0;
+            padding: 2px 0 2px 20px;
+            border-left: 4px solid #0056b3;
+            color: #495057;
+            font-size: 1.08em;
+        }
+        .note {
+            margin: 34px 0 20px 0;
+            padding-top: 22px;
+            border-top: 1px solid #dee2e6;
+            color: #495057;
+        }
+        .references {
+            font-size: 0.95em;
+            padding-left: 22px;
+        }
+        .references li {
+            margin-bottom: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        @media (max-width: 760px) {
+            .container {
+                width: auto;
+                margin: 10px auto;
+                padding: 0 12px;
+            }
+            .article {
+                padding: 28px 20px;
+            }
+            .header {
+                padding: 16px 20px;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .header h1 {
+                font-size: 1.35em;
+            }
+            .nav-buttons {
+                gap: 6px;
+            }
+            .nav-buttons a {
+                padding: 7px 9px;
+            }
+            h1 {
+                font-size: 1.9em;
+            }
+        }
+    </style>
 </head>
 <body>
-<h1 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 21.6px 'Helvetica Neue'; color: #272c31; -webkit-text-stroke: #272c31"><span class="s1">Kuldeep Kumar, Ph.D. </span><span class="s2">| Blog</span></h1>
-<p class="p2"><span class="s1"><a href="file:///Users/kuldeepkumar/index.html">← Home<span class="s3"></span></a></span></p>
-<p class="p2"><span class="s1"><a href="file:///Users/kuldeepkumar/Downloads/index.html">Blog<span class="s3"></span></a></span></p>
-<h1 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 28.2px 'Helvetica Neue'; color: #0640a4; -webkit-text-stroke: #0640a4"><span class="s1">What can brain organoids tell us about CNVs?</span></h1>
-<p class="p4"><span class="s1">July 29, 2026</span></p>
-<p class="p5"><span class="s1">Inspired by Abhishaike Mahajan’s essay <a href="https://www.owlposting.com/p/why-havent-organoids-solved-all-of"><span class="s4">“Why haven’t organoids solved all of drug discovery?”</span></a>, but viewed here through the narrower lens of CNVs, psychiatric genetics, and neuroimaging.</span></p>
-<p class="p6"><span class="s1">A recent essay asked why organoids—human, three-dimensional, and apparently tissue-like—have not transformed drug discovery. It prompted a related question for my own field. If a brain organoid can carry the same pathogenic copy-number variant (CNV) as a person, why has it not already explained the associated differences in brain structure, cognition, and psychiatric risk?</span></p>
-<p class="p6"><span class="s1">The simple answer is that an organoid is not a small patient brain. But that answer is too easy and, by itself, not very useful. The more important point is that organoids make a particular part of the problem experimentally accessible. They allow us to watch human cells carrying a genetic perturbation pass through early developmental states, interact locally, and sometimes produce measurable molecular or cellular abnormalities. What they do not contain is the full chain linking that early perturbation to an organised brain, a life history, and a clinical outcome.</span></p>
-<p class="p6"><span class="s1">For CNV research, organoids are therefore neither miniature disorders nor failed brains. They are restricted developmental experiments. Their value depends on asking questions that fit inside that restriction.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px 'Helvetica Neue'; color: #0640a4; -webkit-text-stroke: #0640a4"><span class="s1">From modelling a phenotype to dissecting dosage</span></h2>
-<p class="p6"><span class="s1">The modern cerebral organoid field is often traced to Lancaster and colleagues’ 2013 study, which modelled aspects of human brain development and used patient-derived cells to investigate microcephaly. The conceptual advance was striking: a human genetic condition could be moved into a manipulable developmental system rather than studied only through clinical observation, postmortem tissue, or animal models.</span></p>
-<p class="p6"><span class="s1">The field soon moved beyond asking whether an organoid could reproduce a visible disease-related phenotype. In a 2020 study of 22q11.2 deletion, cortical organoids and related neuronal cultures were used to identify abnormalities in neuronal activity and calcium signalling. The work implicated reduced dosage of DGCR8, reproduced parts of the phenotype through targeted perturbation, and rescued a defined cellular abnormality. The organoid was no longer only a model in which something went wrong; it became part of a route toward identifying what might be driving the abnormality.</span></p>
-<p class="p6"><span class="s1">Urresti and colleagues’ 2021 study of reciprocal 16p11.2 deletion and duplication pushed the dosage question further. Gordon and colleagues’ 2026 study then widened the frame from one genetic condition to several, asking where distinct autism-associated mutations diverged and where their effects converged during development. Across this short history, the central question has shifted from can we see a phenotype? to which developmental processes are altered, and are they specific to one genetic perturbation or shared across several?</span></p>
-<p class="p6"><span class="s1">That is substantial progress. It is also where interpretation becomes more difficult.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px 'Helvetica Neue'; color: #0640a4; -webkit-text-stroke: #0640a4"><span class="s1">CNVs make the problem unusually hard</span></h2>
-<p class="p6"><span class="s1">A CNV is not a clean single-gene perturbation. It may change the dosage of many coding genes, regulatory elements, molecular complexes, and downstream pathways at once. The resulting phenotype may vary across cell types and developmental stages. Compensation may occur for some genes but not others. Deletion and duplication may behave reciprocally for one phenotype and similarly for another.</span></p>
-<p class="p6"><span class="s1">An organoid can show that a CNV changes progenitor behaviour, neuronal maturation, migration, or network activity. It does not automatically reveal whether one interval gene dominates, several genes act additively, or combinations of genes produce nonlinear effects. A genuine CNV phenotype can therefore remain mechanistically unresolved.</span></p>
-<p class="p6"><span class="s1">The second problem is genetic heterogeneity. Single-cell sequencing may provide exquisite resolution across thousands of cells, yet the number of independent genomes can remain small. For population-level inference, a study with three carriers is still principally a three-donor study, even when it profiles millions of cells. This matters for CNVs because penetrance and expressivity vary widely. Background polygenic risk, additional rare variants, environment, and clinical ascertainment can all modify the phenotype.</span></p>
-<p class="p6"><span class="s1">The third problem is developmental scope. Many brain organoids resemble aspects of prenatal development, which is not necessarily a weakness for neurodevelopmental CNVs. It may be precisely the period we need to observe. But an early cellular abnormality is a marker of developmental liability, not a direct model of later autism, psychosis, cognition, or MRI anatomy. Those outcomes emerge after prolonged interactions among many brain systems and the rest of the body.</span></p>
-<blockquote style="margin: 0.0px 0.0px 28.0px 0.0px; font: 13.4px 'Helvetica Neue'; color: #393f45; -webkit-text-stroke: #393f45"><span class="s1">The strongest endpoint of an organoid study is often a candidate developmental mechanism, rather than an explanation of the CNV as a whole.</span></blockquote>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px 'Helvetica Neue'; color: #0640a4; -webkit-text-stroke: #0640a4"><span class="s1">16p11.2: when correspondence is compelling but incomplete</span></h2>
-<p class="p6"><span class="s1">Urresti et al. provides a useful example because the result appears, at first, unusually easy to translate. Cortical organoids derived from 16p11.2 deletion carriers were larger, whereas those derived from duplication carriers were smaller. The study also reported changes in the balance between progenitors and neurons, neuronal maturation, migration, synaptic phenotypes, and molecular pathways. The direction of organoid growth was consistent with the broader macrocephaly and microcephaly tendencies associated with deletion and duplication carriers.</span></p>
-<p class="p6"><span class="s1">It is tempting to stop there and say that the organoid reproduced the human brain-growth phenotype. But organoid size and brain volume are not equivalent measurements. An organoid’s growth reflects proliferation, differentiation, cell death, lumen structure, cell density, and culture conditions. Human brain growth additionally reflects regional patterning, vasculature, glial development, mechanical constraints, connectivity, and years of development.</span></p>
-<p class="p6"><span class="s1">The correspondence is still valuable. It tells us that reciprocal dosage can generate an early growth phenotype in human neural tissue that points in the same direction as a known carrier phenotype. What it does not show is that the same cellular process explains the whole-brain phenotype in people.</span></p>
-<p class="p6"><span class="s1">The study becomes even more informative when the focus moves away from size. Both deletion and duplication organoids showed increased active RhoA and migration abnormalities, despite their opposing growth patterns. Inhibition of RhoA rescued migration but not every phenotype.</span></p>
-<p class="p6"><span class="s1">This is a useful reminder that reciprocal CNVs do not produce one globally reciprocal biology. Deletion and duplication can diverge at one level and converge at another. A pathway may contribute to a specific cellular abnormality without accounting for the entire CNV phenotype. Partial rescue is therefore not a disappointing result; it may be a more realistic reflection of a multigene perturbation.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px 'Helvetica Neue'; color: #0640a4; -webkit-text-stroke: #0640a4"><span class="s1">Gordon et al.: convergence depends on when and where we look</span></h2>
-<p class="p6"><span class="s1">Gordon et al. asks a different question. The study generated cortical organoids from a large collection spanning several genetically defined forms associated with autism, idiopathic autism, and unaffected controls, and profiled them across development. Early stages showed prominent mutation-specific effects. As development proceeded, several genetic forms increasingly converged on shared transcriptional changes. The authors identified a regulatory network enriched for autism-risk genes and tested candidate regulators using CRISPR interference in human neural progenitors.</span></p>
-<p class="p6"><span class="s1">The result is more precise than the shorthand claim that “autism mutations converge.” The mutations converged on selected molecular programmes, in a particular cortical organoid model, during a defined developmental window. They did not necessarily converge in cell composition, brain anatomy, cognition, symptoms, or treatment response.</span></p>
-<p class="p6"><span class="s1">That distinction matters because convergence is not a single biological property. Different mutations may affect different early processes yet eventually disturb a common transcriptional network. They may converge molecularly while producing different brain-imaging phenotypes. Conversely, similar clinical outcomes can arise through partially different cellular routes.</span></p>
-<p class="p6"><span class="s1">The study also raises an important control problem. Neurogenesis, translation, chromatin regulation, mitochondrial activity, and synaptic maturation are broad developmental programmes. Many sufficiently disruptive perturbations—or poorly growing organoids—could affect them. A convincing convergence claim therefore needs to show more than pathway overlap. It should establish developmental timing, cell-type context, direction of effect, replication, distinction from generic stress, and ideally perturbational validation. Gordon et al. goes considerably further in this direction than a simple comparison of differentially expressed genes, while still stopping short of a universal mechanism for autism.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px 'Helvetica Neue'; color: #0640a4; -webkit-text-stroke: #0640a4"><span class="s1">How far should an organoid claim travel?</span></h2>
-<p class="p6"><span class="s1">A change observed within the organoid—such as altered progenitor abundance or migration—is direct evidence about that model. Mapping the affected programme to primary human developmental data provides external support that the relevant cell state or process exists in vivo. Connecting it to altered brain growth or psychiatric liability creates a plausible mechanism. Claiming that it explains an MRI pattern, cognition, or diagnosis requires further human evidence.</span></p>
-<p class="p6"><span class="s1">The further the claim travels, the more independent support it needs.</span></p>
-<p class="p6"><span class="s1">For neuroimaging genetics, this means that an organoid is better suited to identifying a developmental programme than reproducing a regional brain map. The useful next step is not to map an organoid directly onto a cortical parcel, but to ask whether the affected cell type or programme has a credible developmental and spatial distribution in primary human brain data, and whether that distribution relates to the imaging phenotype.</span></p>
-<p class="p6"><span class="s1">For psychiatric genetics, organoids may be particularly useful for genetics-first stratification. They can test whether different rare mutations share a developmental programme and whether that programme can be perturbed. They cannot determine why one carrier develops a particular diagnosis while another does not, or whether a shared molecular network is specific to autism rather than broader neurodevelopmental impairment.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px 'Helvetica Neue'; color: #0640a4; -webkit-text-stroke: #0640a4"><span class="s1">What could the next experiment test?</span></h2>
-<p class="p6"><span class="s1">The immediate need is not simply for larger organoids or more single-cell data. It is for designs that separate the CNV effect from the many other sources of variation.</span></p>
-<p class="p6"><span class="s1">Stronger studies will need multiple unrelated carriers, repeated clones and differentiations, and isogenic editing where feasible. Reciprocal deletion and duplication should be studied together when both occur in humans. Longitudinal measurements should distinguish altered cell composition from altered state and from simple developmental delay.</span></p>
-<p class="p6"><span class="s1">Once a robust CNV-associated phenotype has been established, systematic perturbation becomes especially valuable. Rather than assuming that one attractive interval gene explains the result, combinations of genes can be tested against the broader CNV signature. This is where CRISPR screens and large perturbation atlases may complement organoids: organoids define a biologically rich state, while more scalable systems help dissect its regulators.</span></p>
-<p class="p6"><span class="s1">Cross-CNV convergence also needs better negative controls. Shared stress, hypoxia, poor patterning, or delayed maturation can masquerade as shared disease biology. Harmonised protocols and explicit stress signatures are therefore part of the biological interpretation, not merely technical quality control.</span></p>
-<p class="p6"><span class="s1">Links to neuroimaging should be made as a chain rather than a leap: from an organoid-derived programme, to a primary human developmental reference, to a hypothesis about spatial vulnerability, and then to an imaging phenotype. Each step may be modest, but together they can produce a credible cross-scale mechanism.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px 'Helvetica Neue'; color: #0640a4; -webkit-text-stroke: #0640a4"><span class="s1">So, what are organoids good for here?</span></h2>
-<p class="p6"><span class="s1">The essay that inspired this post asks why organoids have not solved drug discovery. For CNVs, the analogous disappointment would be misplaced. Brain organoids were never likely to compress gene dosage, brain organisation, cognition, clinical heterogeneity, and treatment response into a single dish.</span></p>
-<p class="p6"><span class="s1">Their value is narrower but still substantial. They can expose when a dosage effect first appears, which developing cell populations are sensitive, whether deletion and duplication follow the same path, and whether different genetic perturbations meet at a shared developmental bottleneck. They also allow selected mechanisms to be perturbed in human neural tissue—something that human imaging and observational genetics cannot do alone.</span></p>
-<p class="p6"><span class="s1">The future is therefore not organoids replacing animal models, developmental atlases, neuroimaging, or population genetics. It is organoids occupying a well-defined position among them.</span></p>
-<blockquote style="margin: 0.0px 0.0px 28.0px 0.0px; font: 13.4px 'Helvetica Neue'; color: #393f45; -webkit-text-stroke: #393f45"><span class="s1">Brain organoids are not miniature CNVs, miniature diagnoses, or miniature brains. They are controlled windows into selected consequences of genomic dosage.</span></blockquote>
-<p class="p6"><span class="s1">Used within that boundary, they can answer questions that are otherwise extraordinarily difficult to approach. Used beyond it, they can make a cellular phenotype sound like an explanation of a person.</span></p>
-<p class="p6"><span class="s1">That is not a reason to be sceptical of organoids. It is a reason to be more precise about what we ask from them.</span></p>
-<p class="p9"><span class="s5">I am not an organoid biologist, and this is not intended as a technical review of organoid generation. I approach these studies from the perspective of CNV, psychiatric, and neuroimaging genetics: what evidence they add, how far that evidence can travel, and where other human datasets remain essential.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px 'Helvetica Neue'; color: #0640a4; -webkit-text-stroke: #0640a4"><span class="s1">References</span></h2>
-<ol class="ol1">
-  <li class="li10"><span class="s6"></span><span class="s7">Mahajan A. <a href="https://www.owlposting.com/p/why-havent-organoids-solved-all-of"><span class="s8">Why haven’t organoids solved all of drug discovery?</span></a> Owl Posting. 2026.</span></li>
-  <li class="li11"><span class="s9"></span><span class="s1">Lancaster MA, Renner M, Martin CA, et al. <a href="https://doi.org/10.1038/nature12517"><span class="s10">Cerebral organoids model human brain development and microcephaly</span></a>. Nature. 2013;501:373–379.</span></li>
-  <li class="li11"><span class="s9"></span><span class="s1">Khan TA, Revah O, Gordon A, et al. <a href="https://doi.org/10.1038/s41591-020-1043-9"><span class="s10">Neuronal defects in a human cellular model of 22q11.2 deletion syndrome</span></a>. Nature Medicine. 2020;26:1888–1898.</span></li>
-  <li class="li10"><span class="s6"></span><span class="s7">Urresti J, Zhang P, Moran-Losada P, et al. <a href="https://doi.org/10.1038/s41380-021-01243-6"><span class="s8">Cortical organoids model early brain development disrupted by 16p11.2 copy number variants in autism</span></a>. Molecular Psychiatry. 2021;26:7560–7580.</span></li>
-  <li class="li10"><span class="s6"></span><span class="s7">Gordon A, Yoon S-J, Bicks LK, et al. <a href="https://doi.org/10.1038/s41586-025-10047-5"><span class="s8">Developmental convergence and divergence in human stem cell models of autism</span></a>. Nature. 2026;651:707–719.</span></li>
-</ol>
-<p class="p12"><span class="s5">© 2026 Kuldeep Kumar | Personal Website. <a href="file:///Users/kuldeepkumar/index.html"><span class="s11">Home</span></a></span></p>
+    <header class="header">
+        <h1>Kuldeep Kumar, Ph.D. <span>| Blog</span></h1>
+        <nav class="nav-buttons">
+            <a href="../index.html">&larr; Home</a>
+            <a href="index.html">Blog</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <h1>What can brain organoids tell us about CNVs?</h1>
+            <div class="post-date">July 29, 2026</div>
+
+            <p class="dek"><em>Inspired by Abhishaike Mahajan’s essay <a href="https://www.owlposting.com/p/why-havent-organoids-solved-all-of" target="_blank" rel="noopener noreferrer">“Why haven’t organoids solved all of drug discovery?”</a>, but viewed here through the narrower lens of CNVs, psychiatric genetics, and neuroimaging.</em></p>
+
+            <p>A recent essay asked why organoids—human, three-dimensional, and apparently tissue-like—have not transformed drug discovery. It prompted a related question for my own field. If a brain organoid can carry the same pathogenic copy-number variant (CNV) as a person, why has it not already explained the associated differences in brain structure, cognition, and psychiatric risk?</p>
+
+            <p>The simple answer is that an organoid is not a small patient brain. But that answer is too easy and, by itself, not very useful. The more important point is that organoids make a particular part of the problem experimentally accessible. They allow us to watch human cells carrying a genetic perturbation pass through early developmental states, interact locally, and sometimes produce measurable molecular or cellular abnormalities. What they do not contain is the full chain linking that early perturbation to an organised brain, a life history, and a clinical outcome.</p>
+
+            <p>For CNV research, organoids are therefore neither miniature disorders nor failed brains. They are restricted developmental experiments. Their value depends on asking questions that fit inside that restriction.</p>
+
+            <h2>From modelling a phenotype to dissecting dosage</h2>
+
+            <p>The modern cerebral organoid field is often traced to Lancaster and colleagues’ 2013 study, which modelled aspects of human brain development and used patient-derived cells to investigate microcephaly. The conceptual advance was striking: a human genetic condition could be moved into a manipulable developmental system rather than studied only through clinical observation, postmortem tissue, or animal models.</p>
+
+            <p>The field soon moved beyond asking whether an organoid could reproduce a visible disease-related phenotype. In a 2020 study of 22q11.2 deletion, cortical organoids and related neuronal cultures were used to identify abnormalities in neuronal activity and calcium signalling. The work implicated reduced dosage of <strong>DGCR8</strong>, reproduced parts of the phenotype through targeted perturbation, and rescued a defined cellular abnormality. The organoid was no longer only a model in which something went wrong; it became part of a route toward identifying what might be driving the abnormality.</p>
+
+            <p>Urresti and colleagues’ 2021 study of reciprocal 16p11.2 deletion and duplication pushed the dosage question further. Gordon and colleagues’ 2026 study then widened the frame from one genetic condition to several, asking where distinct autism-associated mutations diverged and where their effects converged during development. Across this short history, the central question has shifted from <em>can we see a phenotype?</em> to <em>which developmental processes are altered, and are they specific to one genetic perturbation or shared across several?</em></p>
+
+            <p>That is substantial progress. It is also where interpretation becomes more difficult.</p>
+
+            <h2>CNVs make the problem unusually hard</h2>
+
+            <p>A CNV is not a clean single-gene perturbation. It may change the dosage of many coding genes, regulatory elements, molecular complexes, and downstream pathways at once. The resulting phenotype may vary across cell types and developmental stages. Compensation may occur for some genes but not others. Deletion and duplication may behave reciprocally for one phenotype and similarly for another.</p>
+
+            <p>An organoid can show that a CNV changes progenitor behaviour, neuronal maturation, migration, or network activity. It does not automatically reveal whether one interval gene dominates, several genes act additively, or combinations of genes produce nonlinear effects. A genuine CNV phenotype can therefore remain mechanistically unresolved.</p>
+
+            <p>The second problem is genetic heterogeneity. Single-cell sequencing may provide exquisite resolution across thousands of cells, yet the number of independent genomes can remain small. For population-level inference, a study with three carriers is still principally a three-donor study, even when it profiles millions of cells. This matters for CNVs because penetrance and expressivity vary widely. Background polygenic risk, additional rare variants, environment, and clinical ascertainment can all modify the phenotype.</p>
+
+            <p>The third problem is developmental scope. Many brain organoids resemble aspects of prenatal development, which is not necessarily a weakness for neurodevelopmental CNVs. It may be precisely the period we need to observe. But an early cellular abnormality is a marker of developmental liability, not a direct model of later autism, psychosis, cognition, or MRI anatomy. Those outcomes emerge after prolonged interactions among many brain systems and the rest of the body.</p>
+
+            <blockquote>The strongest endpoint of an organoid study is often a candidate developmental mechanism, rather than an explanation of the CNV as a whole.</blockquote>
+
+            <h2>16p11.2: when correspondence is compelling but incomplete</h2>
+
+            <p>Urresti et al. provides a useful example because the result appears, at first, unusually easy to translate. Cortical organoids derived from 16p11.2 deletion carriers were larger, whereas those derived from duplication carriers were smaller. The study also reported changes in the balance between progenitors and neurons, neuronal maturation, migration, synaptic phenotypes, and molecular pathways. The direction of organoid growth was consistent with the broader macrocephaly and microcephaly tendencies associated with deletion and duplication carriers.</p>
+
+            <p>It is tempting to stop there and say that the organoid reproduced the human brain-growth phenotype. But organoid size and brain volume are not equivalent measurements. An organoid’s growth reflects proliferation, differentiation, cell death, lumen structure, cell density, and culture conditions. Human brain growth additionally reflects regional patterning, vasculature, glial development, mechanical constraints, connectivity, and years of development.</p>
+
+            <p>The correspondence is still valuable. It tells us that reciprocal dosage can generate an early growth phenotype in human neural tissue that points in the same direction as a known carrier phenotype. What it does not show is that the same cellular process explains the whole-brain phenotype in people.</p>
+
+            <p>The study becomes even more informative when the focus moves away from size. Both deletion and duplication organoids showed increased active RhoA and migration abnormalities, despite their opposing growth patterns. Inhibition of RhoA rescued migration but not every phenotype.</p>
+
+            <p>This is a useful reminder that reciprocal CNVs do not produce one globally reciprocal biology. Deletion and duplication can diverge at one level and converge at another. A pathway may contribute to a specific cellular abnormality without accounting for the entire CNV phenotype. Partial rescue is therefore not a disappointing result; it may be a more realistic reflection of a multigene perturbation.</p>
+
+            <h2>Gordon et al.: convergence depends on when and where we look</h2>
+
+            <p>Gordon et al. asks a different question. The study generated cortical organoids from a large collection spanning several genetically defined forms associated with autism, idiopathic autism, and unaffected controls, and profiled them across development. Early stages showed prominent mutation-specific effects. As development proceeded, several genetic forms increasingly converged on shared transcriptional changes. The authors identified a regulatory network enriched for autism-risk genes and tested candidate regulators using CRISPR interference in human neural progenitors.</p>
+
+            <p>The result is more precise than the shorthand claim that “autism mutations converge.” The mutations converged on selected molecular programmes, in a particular cortical organoid model, during a defined developmental window. They did not necessarily converge in cell composition, brain anatomy, cognition, symptoms, or treatment response.</p>
+
+            <p>That distinction matters because convergence is not a single biological property. Different mutations may affect different early processes yet eventually disturb a common transcriptional network. They may converge molecularly while producing different brain-imaging phenotypes. Conversely, similar clinical outcomes can arise through partially different cellular routes.</p>
+
+            <p>The study also raises an important control problem. Neurogenesis, translation, chromatin regulation, mitochondrial activity, and synaptic maturation are broad developmental programmes. Many sufficiently disruptive perturbations—or poorly growing organoids—could affect them. A convincing convergence claim therefore needs to show more than pathway overlap. It should establish developmental timing, cell-type context, direction of effect, replication, distinction from generic stress, and ideally perturbational validation. Gordon et al. goes considerably further in this direction than a simple comparison of differentially expressed genes, while still stopping short of a universal mechanism for autism.</p>
+
+            <h2>How far should an organoid claim travel?</h2>
+
+            <p>A change observed within the organoid—such as altered progenitor abundance or migration—is direct evidence about that model. Mapping the affected programme to primary human developmental data provides external support that the relevant cell state or process exists in vivo. Connecting it to altered brain growth or psychiatric liability creates a plausible mechanism. Claiming that it explains an MRI pattern, cognition, or diagnosis requires further human evidence.</p>
+
+            <p><strong>The further the claim travels, the more independent support it needs.</strong></p>
+
+            <p>For neuroimaging genetics, this means that an organoid is better suited to identifying a developmental programme than reproducing a regional brain map. The useful next step is not to map an organoid directly onto a cortical parcel, but to ask whether the affected cell type or programme has a credible developmental and spatial distribution in primary human brain data, and whether that distribution relates to the imaging phenotype.</p>
+
+            <p>For psychiatric genetics, organoids may be particularly useful for genetics-first stratification. They can test whether different rare mutations share a developmental programme and whether that programme can be perturbed. They cannot determine why one carrier develops a particular diagnosis while another does not, or whether a shared molecular network is specific to autism rather than broader neurodevelopmental impairment.</p>
+
+            <h2>What could the next experiment test?</h2>
+
+            <p>The immediate need is not simply for larger organoids or more single-cell data. It is for designs that separate the CNV effect from the many other sources of variation.</p>
+
+            <p>Stronger studies will need multiple unrelated carriers, repeated clones and differentiations, and isogenic editing where feasible. Reciprocal deletion and duplication should be studied together when both occur in humans. Longitudinal measurements should distinguish altered cell composition from altered state and from simple developmental delay.</p>
+
+            <p>Once a robust CNV-associated phenotype has been established, systematic perturbation becomes especially valuable. Rather than assuming that one attractive interval gene explains the result, combinations of genes can be tested against the broader CNV signature. This is where CRISPR screens and large perturbation atlases may complement organoids: organoids define a biologically rich state, while more scalable systems help dissect its regulators.</p>
+
+            <p>Cross-CNV convergence also needs better negative controls. Shared stress, hypoxia, poor patterning, or delayed maturation can masquerade as shared disease biology. Harmonised protocols and explicit stress signatures are therefore part of the biological interpretation, not merely technical quality control.</p>
+
+            <p>Links to neuroimaging should be made as a chain rather than a leap: from an organoid-derived programme, to a primary human developmental reference, to a hypothesis about spatial vulnerability, and then to an imaging phenotype. Each step may be modest, but together they can produce a credible cross-scale mechanism.</p>
+
+            <h2>So, what are organoids good for here?</h2>
+
+            <p>The essay that inspired this post asks why organoids have not solved drug discovery. For CNVs, the analogous disappointment would be misplaced. Brain organoids were never likely to compress gene dosage, brain organisation, cognition, clinical heterogeneity, and treatment response into a single dish.</p>
+
+            <p>Their value is narrower but still substantial. They can expose when a dosage effect first appears, which developing cell populations are sensitive, whether deletion and duplication follow the same path, and whether different genetic perturbations meet at a shared developmental bottleneck. They also allow selected mechanisms to be perturbed in human neural tissue—something that human imaging and observational genetics cannot do alone.</p>
+
+            <p>The future is therefore not organoids replacing animal models, developmental atlases, neuroimaging, or population genetics. It is organoids occupying a well-defined position among them.</p>
+
+            <blockquote>Brain organoids are not miniature CNVs, miniature diagnoses, or miniature brains. They are controlled windows into selected consequences of genomic dosage.</blockquote>
+
+            <p>Used within that boundary, they can answer questions that are otherwise extraordinarily difficult to approach. Used beyond it, they can make a cellular phenotype sound like an explanation of a person.</p>
+
+            <p>That is not a reason to be sceptical of organoids. It is a reason to be more precise about what we ask from them.</p>
+
+            <div class="note">
+                <em>I am not an organoid biologist, and this is not intended as a technical review of organoid generation. I approach these studies from the perspective of CNV, psychiatric, and neuroimaging genetics: what evidence they add, how far that evidence can travel, and where other human datasets remain essential.</em>
+            </div>
+
+            <h2>References</h2>
+            <ol class="references">
+                <li>Mahajan A. <a href="https://www.owlposting.com/p/why-havent-organoids-solved-all-of" target="_blank" rel="noopener noreferrer">Why haven’t organoids solved all of drug discovery?</a> <em>Owl Posting</em>. 2026.</li>
+                <li>Lancaster MA, Renner M, Martin CA, et al. <a href="https://doi.org/10.1038/nature12517" target="_blank" rel="noopener noreferrer">Cerebral organoids model human brain development and microcephaly</a>. <em>Nature</em>. 2013;501:373–379.</li>
+                <li>Khan TA, Revah O, Gordon A, et al. <a href="https://doi.org/10.1038/s41591-020-1043-9" target="_blank" rel="noopener noreferrer">Neuronal defects in a human cellular model of 22q11.2 deletion syndrome</a>. <em>Nature Medicine</em>. 2020;26:1888–1898.</li>
+                <li>Urresti J, Zhang P, Moran-Losada P, et al. <a href="https://doi.org/10.1038/s41380-021-01243-6" target="_blank" rel="noopener noreferrer">Cortical organoids model early brain development disrupted by 16p11.2 copy number variants in autism</a>. <em>Molecular Psychiatry</em>. 2021;26:7560–7580.</li>
+                <li>Gordon A, Yoon S-J, Bicks LK, et al. <a href="https://doi.org/10.1038/s41586-025-10047-5" target="_blank" rel="noopener noreferrer">Developmental convergence and divergence in human stem cell models of autism</a>. <em>Nature</em>. 2026;651:707–719.</li>
+            </ol>
+
+            <a class="back-link" href="index.html">&larr; Back to all posts</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kuldeep Kumar | Personal Website. <a href="../index.html">Home</a></p>
+    </footer>
 </body>
 </html>
