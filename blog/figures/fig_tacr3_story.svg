@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1200"
+   height="780"
+   viewBox="0 0 1200 780"
+   version="1.1"
+   id="svg88"
+   sodipodi:docname="fig_tacr3_story.svg"
+   inkscape:version="1.2 (dc2aeda, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview90"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.0383333"
+     inkscape:cx="452.64848"
+     inkscape:cy="399.19743"
+     inkscape:window-width="1999"
+     inkscape:window-height="1205"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg88" />
+  <defs
+     id="defs14">
+    <style
+       id="style9">
+      .title { font: 700 34px 'Arial', sans-serif; fill: #1f2937; }
+      .subtitle { font: 500 20px 'Arial', sans-serif; fill: #4b5563; }
+      .boxh { font: 700 22px 'Arial', sans-serif; fill: #0f172a; }
+      .boxt { font: 500 18px 'Arial', sans-serif; fill: #374151; }
+      .small { font: 500 16px 'Arial', sans-serif; fill: #4b5563; }
+      .chip { font: 700 16px 'Arial', sans-serif; fill: #0b4a8b; }
+    </style>
+    <marker
+       id="arrow"
+       markerWidth="10"
+       markerHeight="10"
+       refX="8"
+       refY="3"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M0,0 L0,6 L9,3 z"
+         fill="#4b5563"
+         id="path11" />
+    </marker>
+  </defs>
+  <rect
+     width="1200"
+     height="780"
+     fill="#ffffff"
+     id="rect16" />
+  <text
+     x="600"
+     y="52"
+     text-anchor="middle"
+     class="title"
+     id="text18">A hidden neuroendocrine–striatal signal at the TACR3 region</text>
+  <text
+     x="600"
+     y="82"
+     text-anchor="middle"
+     class="subtitle"
+     id="text20"
+     style="-inkscape-font-specification:'Arial, sans-serif, Medium';font-family:Arial, sans-serif;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-size:20px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;line-height:normal;text-anchor:middle;fill:#4b5563"><tspan
+       sodipodi:role="line"
+       id="tspan356">What becomes visible when DRAGEN-WGS Zou2026, Garg 2026 AJHG, &amp; Big40-Oxford Smith2021 are read together</tspan></text>
+  <!-- top source boxes -->
+  <rect
+     x="70"
+     y="120"
+     rx="18"
+     ry="18"
+     width="300"
+     height="115"
+     fill="#eef6ff"
+     stroke="#bfd7f5"
+     stroke-width="2"
+     id="rect22" />
+  <text
+     x="220"
+     y="160"
+     text-anchor="middle"
+     class="boxh"
+     id="text24">Garg 2026 AJHG</text>
+  <text
+     x="220"
+     y="190"
+     text-anchor="middle"
+     class="boxt"
+     id="text26">5-kb copy-state clustering</text>
+  <text
+     x="220"
+     y="216"
+     text-anchor="middle"
+     class="small"
+     id="text28">captures small and multiallelic CNV signal</text>
+  <rect
+     x="450"
+     y="120"
+     rx="18"
+     ry="18"
+     width="300"
+     height="115"
+     fill="#eef6ff"
+     stroke="#bfd7f5"
+     stroke-width="2"
+     id="rect30" />
+  <text
+     x="600"
+     y="160"
+     text-anchor="middle"
+     class="boxh"
+     id="text32">DRAGEN-WGS</text>
+  <text
+     x="600"
+     y="190"
+     text-anchor="middle"
+     class="boxt"
+     id="text34">Zou 2026 Nature</text>
+  <text
+     x="600"
+     y="216"
+     text-anchor="middle"
+     class="small"
+     id="text36"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:16px;line-height:normal;font-family:Arial, sans-serif">breakpoint-defined deletions &amp; duplications</text>
+  <rect
+     x="830"
+     y="120"
+     rx="18"
+     ry="18"
+     width="300"
+     height="115"
+     fill="#eef6ff"
+     stroke="#bfd7f5"
+     stroke-width="2"
+     id="rect38" />
+  <text
+     x="980"
+     y="160"
+     text-anchor="middle"
+     class="boxh"
+     id="text40">Big40-Oxford</text>
+  <text
+     x="980"
+     y="190"
+     text-anchor="middle"
+     class="boxt"
+     id="text42"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial, sans-serif">Smith 2021 Nat Neuroi</text>
+  <text
+     x="980"
+     y="216"
+     text-anchor="middle"
+     class="small"
+     id="text44">common-variant imaging GWAS</text>
+  <!-- center locus -->
+  <rect
+     x="290"
+     y="290"
+     rx="22"
+     ry="22"
+     width="620"
+     height="140"
+     fill="#fff7e9"
+     stroke="#f0bf64"
+     stroke-width="3"
+     id="rect46" />
+  <text
+     x="600"
+     y="334"
+     text-anchor="middle"
+     class="boxh"
+     id="text48">Small deletion upstream of TACR3</text>
+  <text
+     x="600"
+     y="365"
+     text-anchor="middle"
+     class="boxt"
+     id="text50">a non-coding structural locus with convergent signal across three views</text>
+  <text
+     x="600"
+     y="394"
+     text-anchor="middle"
+     class="small"
+     id="text52">not yet a causal mechanism — but a compelling hypothesis</text>
+  <line
+     x1="220"
+     y1="235"
+     x2="450"
+     y2="290"
+     stroke="#4b5563"
+     stroke-width="3"
+     marker-end="url(#arrow)"
+     id="line54" />
+  <line
+     x1="600"
+     y1="235"
+     x2="600"
+     y2="290"
+     stroke="#4b5563"
+     stroke-width="3"
+     marker-end="url(#arrow)"
+     id="line56" />
+  <line
+     x1="980"
+     y1="235"
+     x2="750"
+     y2="290"
+     stroke="#4b5563"
+     stroke-width="3"
+     marker-end="url(#arrow)"
+     id="line58" />
+  <!-- lower outcomes -->
+  <rect
+     x="120"
+     y="505"
+     rx="18"
+     ry="18"
+     width="400"
+     height="165"
+     fill="#f1fdf6"
+     stroke="#8fd0a8"
+     stroke-width="2"
+     id="rect60" />
+  <text
+     x="320"
+     y="545"
+     text-anchor="middle"
+     class="boxh"
+     id="text62"
+     style="-inkscape-font-specification:'Arial, sans-serif, Bold';font-family:Arial, sans-serif;font-weight:700;font-style:normal;font-stretch:normal;font-variant:normal;font-size:22px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;line-height:normal;text-anchor:middle;fill:#0f172a"><tspan
+       sodipodi:role="line"
+       id="tspan352">Previously studied</tspan></text>
+  <text
+     x="320"
+     y="580"
+     text-anchor="middle"
+     class="boxt"
+     id="text64">later menarche</text>
+  <text
+     x="320"
+     y="608"
+     text-anchor="middle"
+     class="boxt"
+     id="text66">lower testosterone</text>
+  <text
+     x="320"
+     y="639"
+     text-anchor="middle"
+     class="small"
+     id="text68"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:16px;line-height:normal;font-family:Arial, sans-serif">fits TACR3 biology in pubertal timing &amp; gonadal axis</text>
+  <rect
+     x="667.51044"
+     y="505.03055"
+     rx="19.124056"
+     ry="17.993332"
+     width="424.97903"
+     height="164.93887"
+     fill="#f6f8ff"
+     stroke="#aebcf7"
+     stroke-width="2.06112"
+     id="rect70" />
+  <text
+     x="880"
+     y="545"
+     text-anchor="middle"
+     class="boxh"
+     id="text72"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:22px;line-height:normal;font-family:Arial, sans-serif">New synthesis: neuroimaging genetics</text>
+  <text
+     x="880"
+     y="580"
+     text-anchor="middle"
+     class="boxt"
+     id="text74">larger putamen volume</text>
+  <text
+     x="880"
+     y="608"
+     text-anchor="middle"
+     class="boxt"
+     id="text76">larger ventral striatum volume</text>
+  <text
+     x="880"
+     y="639"
+     text-anchor="middle"
+     class="small"
+     id="text78">bilateral, anatomically coherent structural MRI signal</text>
+  <line
+     x1="450"
+     y1="430"
+     x2="360"
+     y2="505"
+     stroke="#4b5563"
+     stroke-width="3"
+     marker-end="url(#arrow)"
+     id="line80" />
+  <line
+     x1="750"
+     y1="430"
+     x2="840"
+     y2="505"
+     stroke="#4b5563"
+     stroke-width="3"
+     marker-end="url(#arrow)"
+     id="line82" />
+  <rect
+     x="288.87964"
+     y="698.30182"
+     rx="16.476133"
+     ry="10.319618"
+     width="626.09302"
+     height="47.470245"
+     fill="#eef6ff"
+     stroke="#bfd7f5"
+     stroke-width="1.95592"
+     id="rect84" />
+  <text
+     x="600"
+     y="728"
+     text-anchor="middle"
+     class="chip"
+     id="text86">Key point: a hidden neuroendocrine–striatal locus, not yet a proven mechanism</text>
+</svg>
