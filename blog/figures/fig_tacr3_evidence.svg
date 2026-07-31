@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1200"
+   height="880"
+   viewBox="0 0 1200 880"
+   role="img"
+   aria-labelledby="title desc"
+   version="1.1"
+   id="svg118"
+   sodipodi:docname="fig_tacr3_evidence.svg"
+   inkscape:version="1.2 (dc2aeda, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview120"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.57491621"
+     inkscape:cx="586.17238"
+     inkscape:cy="487.0275"
+     inkscape:window-width="1440"
+     inkscape:window-height="786"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg118" />
+  <title
+     id="title">Evidence map for the TACR3-region deletion and striatal morphology</title>
+  <desc
+     id="desc">The figure compares the Garg copy-number interval, the Zou DRAGEN deletion, the nearby Big40 variant, endocrine associations, and bilateral putamen and ventral-striatum findings.</desc>
+  <defs
+     id="defs16">
+    <style
+       id="style11">
+      .title { font: 700 32px Arial, sans-serif; fill: #1f2937; }
+      .sub { font: 500 18px Arial, sans-serif; fill: #4b5563; }
+      .h { font: 700 21px Arial, sans-serif; fill: #1f2937; }
+      .t { font: 500 17px Arial, sans-serif; fill: #374151; }
+      .s { font: 500 15px Arial, sans-serif; fill: #4b5563; }
+      .axis { stroke: #475569; stroke-width: 3; }
+      .tick { stroke: #94a3b8; stroke-width: 1.5; }
+    </style>
+    <marker
+       id="arrowLeft"
+       markerWidth="10"
+       markerHeight="10"
+       refX="2"
+       refY="3"
+       orient="auto">
+      <path
+         d="M9,0 L9,6 L0,3 z"
+         fill="#64748b"
+         id="path13" />
+    </marker>
+  </defs>
+  <rect
+     width="1200"
+     height="880"
+     fill="#ffffff"
+     id="rect18" />
+  <text
+     x="600"
+     y="48"
+     text-anchor="middle"
+     class="title"
+     id="text20">One locus, three genetic views</text>
+  <text
+     x="600"
+     y="78"
+     text-anchor="middle"
+     class="sub"
+     id="text22">Coordinates below are shown on GRCh38</text>
+  <!-- genomic axis -->
+  <line
+     x1="110"
+     y1="190"
+     x2="1090"
+     y2="190"
+     class="axis"
+     id="line24" />
+  <g
+     class="s"
+     text-anchor="middle"
+     id="g46">
+    <line
+       x1="110"
+       y1="180"
+       x2="110"
+       y2="200"
+       class="tick"
+       id="line26" />
+    <text
+       x="110"
+       y="222"
+       id="text28">103.55 Mb</text>
+    <line
+       x1="390"
+       y1="180"
+       x2="390"
+       y2="200"
+       class="tick"
+       id="line30" />
+    <text
+       x="390"
+       y="222"
+       id="text32">103.65</text>
+    <line
+       x1="670"
+       y1="180"
+       x2="670"
+       y2="200"
+       class="tick"
+       id="line34" />
+    <text
+       x="670"
+       y="222"
+       id="text36">103.75</text>
+    <line
+       x1="950"
+       y1="180"
+       x2="950"
+       y2="200"
+       class="tick"
+       id="line38" />
+    <text
+       x="950"
+       y="222"
+       id="text40">103.85</text>
+    <line
+       x1="1090"
+       y1="180"
+       x2="1090"
+       y2="200"
+       class="tick"
+       id="line42" />
+    <text
+       x="1090"
+       y="222"
+       id="text44">103.90</text>
+  </g>
+  <!-- TACR3 gene: 103.586-103.720, negative strand -->
+  <line
+     x1="585"
+     y1="135"
+     x2="210"
+     y2="135"
+     stroke="#64748b"
+     stroke-width="9"
+     marker-end="url(#arrowLeft)"
+     id="line48" />
+  <text
+     x="400"
+     y="115"
+     text-anchor="middle"
+     class="h"
+     id="text50">TACR3</text>
+  <text
+     x="400"
+     y="158"
+     text-anchor="middle"
+     class="s"
+     id="text52">103,585,817–103,719,986 · reverse strand</text>
+  <!-- CNV intervals -->
+  <rect
+     x="850"
+     y="260"
+     width="56"
+     height="42"
+     rx="8"
+     fill="#cfe7ff"
+     stroke="#3478b9"
+     stroke-width="2.5"
+     id="rect54" />
+  <text
+     x="820"
+     y="262"
+     text-anchor="end"
+     class="h"
+     id="text56"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:21px;line-height:normal;font-family:Arial, sans-serif">Garg 2026 AJHG</text>
+  <text
+     x="820"
+     y="279"
+     text-anchor="end"
+     class="t"
+     id="text58">5-kb copy-state signal</text>
+  <text
+     x="820"
+     y="301"
+     text-anchor="end"
+     class="s"
+     id="text60">103,820,000–103,840,000</text>
+  <rect
+     x="835"
+     y="330"
+     width="78"
+     height="42"
+     rx="8"
+     fill="#dff5e6"
+     stroke="#3d9863"
+     stroke-width="2.5"
+     id="rect62" />
+  <text
+     x="805"
+     y="330"
+     text-anchor="end"
+     class="h"
+     id="text64"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:21px;line-height:normal;font-family:Arial, sans-serif">DRAGEN-WGS</text>
+  <text
+     x="805"
+     y="349"
+     text-anchor="end"
+     class="t"
+     id="text66">breakpoint-defined deletion</text>
+  <text
+     x="805"
+     y="371"
+     text-anchor="end"
+     class="s"
+     id="text68">103,814,564–103,842,526</text>
+  <!-- Big40 variant -->
+  <line
+     x1="978"
+     y1="235"
+     x2="978"
+     y2="395"
+     stroke="#d97706"
+     stroke-width="4"
+     stroke-dasharray="8 6"
+     id="line70" />
+  <circle
+     cx="978"
+     cy="235"
+     r="8"
+     fill="#d97706"
+     id="circle72" />
+  <text
+     x="1000"
+     y="260"
+     class="h"
+     id="text74">Big40-Oxford</text>
+  <text
+     x="1000"
+     y="286"
+     class="t"
+     id="text76">rs528845403</text>
+  <text
+     x="1000"
+     y="309"
+     class="s"
+     id="text78">103,859,634</text>
+  <text
+     x="1000"
+     y="332"
+     class="s"
+     id="text80">~17 kb from DRAGEN interval</text>
+  <path
+     d="M914 404 C940 430, 960 430, 978 404"
+     fill="none"
+     stroke="#7c3aed"
+     stroke-width="2.5"
+     stroke-dasharray="7 6"
+     id="path82" />
+  <text
+     x="948"
+     y="458"
+     text-anchor="middle"
+     class="s"
+     id="text84">CNV–SNP LD and conditional relationship unresolved</text>
+  <!-- Evidence boxes -->
+  <rect
+     x="75"
+     y="515"
+     width="470"
+     height="245"
+     rx="18"
+     fill="#fff7e8"
+     stroke="#e3a52b"
+     stroke-width="2"
+     id="rect86" />
+  <text
+     x="310"
+     y="555"
+     text-anchor="middle"
+     class="h"
+     id="text88">Gonadal-axis phenotypes</text>
+  <text
+     x="110"
+     y="600"
+     class="t"
+     id="text90">Garg copy state</text>
+  <text
+     x="110"
+     y="630"
+     class="s"
+     id="text92">• lower copy number → later menarche</text>
+  <text
+     x="110"
+     y="658"
+     class="s"
+     id="text94">• lower copy number → lower testosterone</text>
+  <text
+     x="110"
+     y="694"
+     class="t"
+     id="text96">DRAGEN deletion</text>
+  <text
+     x="110"
+     y="724"
+     class="s"
+     id="text98">• lower testosterone (P = 1.2 × 10⁻¹⁴)</text>
+  <rect
+     x="655"
+     y="515"
+     width="470"
+     height="245"
+     rx="18"
+     fill="#f1f5ff"
+     stroke="#6d83d4"
+     stroke-width="2"
+     id="rect100" />
+  <text
+     x="890"
+     y="555"
+     text-anchor="middle"
+     class="h"
+     id="text102">Structural MRI phenotypes</text>
+  <text
+     x="690"
+     y="600"
+     class="t"
+     id="text104">Deletion carriers show larger volume in:</text>
+  <text
+     x="690"
+     y="633"
+     class="s"
+     id="text106">• left putamen</text>
+  <text
+     x="690"
+     y="661"
+     class="s"
+     id="text108">• right putamen</text>
+  <text
+     x="690"
+     y="689"
+     class="s"
+     id="text110">• left ventral striatum</text>
+  <text
+     x="690"
+     y="717"
+     class="s"
+     id="text112">• right ventral striatum</text>
+  <rect
+     x="177.69501"
+     y="800.10052"
+     width="839.39185"
+     height="47.798996"
+     rx="15.496464"
+     fill="#eef6ff"
+     stroke="#b8d5f1"
+     stroke-width="1.70101"
+     id="rect114" />
+  <text
+     x="600"
+     y="830"
+     text-anchor="middle"
+     class="t"
+     id="text116">Cross-representation convergence within UK Biobank — not external replication or a resolved mechanism</text>
+</svg>
