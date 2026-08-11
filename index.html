@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kuldeep Kumar, Ph.D.</title>
+    <meta name="description" content="Kuldeep Kumar is a computational neurogenetics researcher integrating human genetics, brain imaging, statistical genetics, and machine learning to study how genetic variation shapes brain, behavior, and psychiatric risk.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -128,6 +129,55 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
+
+        /* --- Profile summary and recent news --- */
+        .profile-summary {
+            font-size: 1.12em;
+            line-height: 1.65;
+            margin-bottom: 24px;
+        }
+
+        .profile-summary strong {
+            color: #343a40;
+        }
+
+        .research-question {
+            font-size: 1.12em;
+            margin-top: 26px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .news-item {
+            background: #f8f9fa;
+            border-left: 4px solid #0056b3;
+            padding: 18px;
+            border-radius: 6px;
+        }
+
+        .news-item p {
+            margin: 0;
+        }
+
+        .news-date {
+            display: block;
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 850px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* --- Research & Publications Card Carousel --- */
         #research-carousel {
             min-height: 280px; /* Sets a minimum height for the research carousel */
@@ -240,6 +290,7 @@
         <h1>Kuldeep Kumar, Ph.D. <span>| Postdoctoral Researcher</span></h1>
         <nav class="nav-buttons">
             <a href="#about-me">About</a>
+            <a href="#news">News</a>
             <a href="#research">Research</a>
             <a href="#cv">CV</a>
             <a href="#awards">Awards/Grants</a>
@@ -255,43 +306,68 @@
             <h2>About Me</h2>
             <div class="about-me-content">
                 <div class="about-me-text">
-                    <p>Hello! I'm Kuldeep Kumar.
-                    <br><strong>IIT Engineer | Former ISRO Scientist | Neurogenetics @ CHUSJ.</strong>
-                    <br><br>
-                    <p><strong>Why does a single genetic variant cause developmental delay in childhood yet trigger psychosis in adolescence?</strong></p>
-                    
-                    <p>My research program addresses this fundamental question by investigating how genetic risk for psychiatric illness accumulates across the lifespan through changes in brain development.</p>
-                    
-                    <p><strong>The Core Insight:</strong> Brain development isn't uniform—different networks mature at different times. My work has shown that genetic variants preferentially impact early-developing sensorimotor networks (and surface area), while psychiatric diagnoses show preferential associations with later-maturing association networks (and cortical thickness). This temporal separation suggests that what we see in patients reflects not just genetic risk, but the accumulated effects of living with a disorder.</p>
-                    
-                    <p><strong>Research Vision:</strong> I integrate genetics, neuroimaging, and behavior to build a "genes to brain networks to behavior" framework that:
-                        <ul>
-                            <li>Maps how rare and common genetic variants affect brain structure and function across development</li>
-                            <li>Distinguishes genetic vulnerability from environmental and experiential effects (medication, socioeconomic factors, lived experience)</li>
-                            <li>Identifies early neurobiological markers of risk within critical developmental windows</li>
-                        </ul>
-                    </p>
-                    
-                    <p><strong>Approach:</strong> I develop computational methods to analyze biobank-scale datasets (100,000+ individuals) from consortia including PGC-CNV, ENIGMA, and G2MH. My work spans from genome-wide association studies to machine learning algorithms that create personalized "brain fingerprints," connecting molecular mechanisms to individual brain trajectories.</p>
-                    
-                    <p><strong>Impact:</strong> This research bridges the widening gap between genomic discoveries and clinical neuroscience, working toward personalized risk prediction and early intervention strategies for neurodevelopmental and psychiatric disorders.</p> 
+                    <div class="profile-summary">
+                        <p>Hello! I'm Kuldeep Kumar.<br>
+                        <strong>Computational neurogenetics | Brain imaging | Statistical genetics</strong></p>
+
+                        <p>I integrate human genetics, neuroimaging, and computational methods to understand how genetic variation shapes brain and behavior. My path spans engineering, ISRO, MRI, and large-scale human genomics.</p>
+                    </div>
+
+                    <p class="research-question"><strong>Why do the effects of genetic variation differ across tissues, brain networks, behavior, and psychiatric risk—and what biological contexts explain this pleiotropy?</strong></p>
+
+                    <p>My research examines how gene dosage, cell and tissue specificity, brain organization, and development shape these effects. I use the brain as a central system for connecting genomic variation to cognition, behavior, and psychiatric phenotypes.</p>
+
+                    <p><strong>The Core Insight:</strong> Genetic effects depend on biological context. Reciprocal CNVs such as 22q11.2 deletion and duplication alter the same genomic region yet can have distinct effects. Across my work, this principle extends from cell- and tissue-specific gene sets to brain organization and behavior.</p>
+
+                    <p>Neuroimaging provides another way to parse these effects. By comparing cortical surface area and thickness, my current work finds different patterns for rare genetic risk and psychiatric diagnoses—an initial step toward separating inherited vulnerability from later influences.</p>
+
+                    <p><strong>Research Vision:</strong> I integrate genetics, neuroimaging, and behavior in a "genes to brain networks to behavior" framework that:</p>
+                    <ul>
+                        <li>Maps rare and common genetic effects across brain structure, cognition, behavior, and psychiatric risk</li>
+                        <li>Tests how gene dosage, biological context, brain organization, and developmental timing shape these effects</li>
+                        <li>Connects human genetic findings to neurobiological mechanisms</li>
+                    </ul>
+
+                    <p><strong>Approach:</strong> I combine biobank-scale genetics, neuroimaging, statistical genetics, and machine learning across UK Biobank, PGC-CNV, ENIGMA, G2MH, and related datasets.</p>
+
+                    <p><strong>Impact:</strong> My long-term goal is to move from broad genetic associations toward biologically grounded models of where, when, and in which contexts genetic variation matters.</p>
+
                     <p><strong>Background:</strong></p>
                     <ul>
                         <li><strong>Postdoc:</strong> University of Montréal (Lab of Dr. Sebastien Jacquemont), studying the impact of rare variants on cognition and brain structure.</li>
                         <li><strong>Ph.D. in Computer Science:</strong> ÉTS, Montreal (Prof. Christian Desrosiers), developed frameworks for multi-modal MRI analysis and brain fingerprinting using machine learning.</li>
                         <li><strong>M.Tech. & B.Tech. (Honors) in Electronics & Electrical Engineering:</strong> IIT Kharagpur, India.</li>
                     </ul>
+
                     <p><strong>Professional Experience:</strong></p>
                     <ul>
-                        <li><strong>2024/12 - 2025/03   Visiting Researcher, University of Cambridge, UK </strong>. Copy number variant architecture of the human brain's cortical organization. </li>
-                        <li><strong>2016/10 - 2017/03   Visiting Researcher, Aramis lab, ICM, Inria Paris, France </strong>. Developed a method for white matter fiber segmentation using functional varifolds. </li>
-                        <li><strong>2012/06 - 2013/08   Scientist, Indian Space Research Organization (ISRO), SAC Ahmedabad, India </strong>. Developed satellite image registration algorithms; deployed satellite image-based crop forecasting software (FASALSoft); calibrated thermal imaging data for Mars Orbiter Mission. </li>
-                        <li><strong>2011/05 - 2011/07   Research Assistant, MITACS Globalink Internship, ETS Montreal, Canada </strong>. Developed manifold learning models to predict future states of time-evolving structure. </li>
-                        <li><strong>2010/05 - 2010/07   Research Assistant, GREYC Lab, Universite de Caen Basse-Normandie, France </strong>. Compared deep neural networks with SVM and tree-based classifiers for diffusion MRI data classification. </li>
+                        <li><strong>2024/12 - 2025/03 Visiting Researcher, University of Cambridge, UK.</strong> Copy number variant architecture of the human brain's cortical organization.</li>
+                        <li><strong>2016/10 - 2017/03 Visiting Researcher, Aramis lab, ICM, Inria Paris, France.</strong> Developed a method for white matter fiber segmentation using functional varifolds.</li>
+                        <li><strong>2012/06 - 2013/08 Scientist, Indian Space Research Organization (ISRO), SAC Ahmedabad, India.</strong> Developed satellite image registration algorithms; deployed satellite image-based crop forecasting software (FASALSoft); calibrated thermal imaging data for Mars Orbiter Mission.</li>
+                        <li><strong>2011/05 - 2011/07 Research Assistant, MITACS Globalink Internship, ETS Montreal, Canada.</strong> Developed manifold learning models to predict future states of time-evolving structures.</li>
+                        <li><strong>2010/05 - 2010/07 Research Assistant, GREYC Lab, Université de Caen Basse-Normandie, France.</strong> Compared deep neural networks with SVM and tree-based classifiers for diffusion MRI data classification.</li>
                     </ul>
                 </div>
                 <div class="about-me-image">
                     <img src="docs/KuldeepKumar.jpg" alt="Photo of Kuldeep Kumar">
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="news">
+            <h2>Recent News</h2>
+            <div class="news-grid">
+                <div class="news-item">
+                    <span class="news-date">2026</span>
+                    <p><strong>Accepted at Nature Communications:</strong> <em>Determinants of functional burden pleiotropy and gene dosage responses across human traits</em> (Kazem S* and Kumar K*, joint first authors).</p>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">October 22, 2026 · Montréal</span>
+                    <p><strong>ASHG 2026 Choice Abstract:</strong> <em>Cell-type and tissue-specific genes affect brain and behavior when deleted or duplicated, but rarely both</em>. Selected among the top 10% of poster abstracts.</p>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">September 16–18, 2026</span>
+                    <p><strong>Short talk accepted:</strong> Wellcome Connecting Science, <em>Genomics of Brain Disorders 2026</em>, Session 1: Genes in Context: When and Where Genetic Risk Acts.</p>
                 </div>
             </div>
         </div>
@@ -467,7 +543,7 @@
         </li>
 
         <li>
-            Kazem*, S., Kumar*, K., et al. (2025). Gene dosage architecture across complex traits. <em>medRxiv (2025): 2025-02</em>. *: Joint first author. 
+            Kazem*, S., Kumar*, K., et al. Determinants of functional burden pleiotropy and gene dosage responses across human traits. <em>Accepted, Nature Communications</em>. *: Joint first author. 
             <a href="https://www.medrxiv.org/content/10.1101/2025.02.25.25322833v1" target="_blank">[PDF]</a>
         </li>
 
@@ -573,7 +649,7 @@
     </div>
     
     <footer>
-        <p>&copy; 2025 Kuldeep Kumar | Personal Website.</p>
+        <p>&copy; 2026 Kuldeep Kumar | Personal Website.</p>
     </footer>
 
     <script>
