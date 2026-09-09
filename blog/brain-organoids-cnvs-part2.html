@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What can brain organoids tell us about CNVs? Part 2</title>
+<meta name="description" content="An update to the July 2026 post on brain organoids and copy-number variants, following a new protein interaction map for autism genes and a large organoid perturbation atlas.">
+
+<!-- Remove this style block if your site stylesheet already handles article pages. -->
+<style>
+  body { max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; line-height: 1.65; color: #1c1c1c; background: #fff; }
+  h1 { font-size: 1.85rem; line-height: 1.25; margin-bottom: .35rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.4rem; margin-bottom: .6rem; }
+  .date { color: #666; font-size: .92rem; margin: 0 0 1.6rem; }
+  .standfirst { color: #444; font-style: italic; margin-bottom: 2rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .93rem; margin: 1.4rem 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  th, td { border-top: 1px solid #ddd; padding: .55rem .5rem; text-align: left; vertical-align: top; }
+  th { border-bottom: 2px solid #333; font-weight: 600; }
+  .refs { font-size: .92rem; color: #333; }
+  .refs li { margin-bottom: .45rem; }
+  .note { font-size: .93rem; color: #555; border-top: 1px solid #ddd; padding-top: 1rem; margin-top: 2.5rem; }
+  a { color: #14507a; }
+</style>
+</head>
+<body>
+
+<article>
+
+<h1>What can brain organoids tell us about CNVs? Part 2</h1>
+<p class="date">September 8, 2026</p>
+
+<p class="standfirst">An update to <a href="brain-organoids-cnvs.html">the July post</a>. Two studies have appeared since: Wang et al., <em>Autism mutations rewire protein interaction networks to drive neurodevelopmental pathology</em> (Science, 27 August 2026), and a preprint from Koh et al., <em>AI-driven framework modeling perturbation in brain organoids reveals candidate genes for autism</em> (bioRxiv, 26 August 2026). Both are read here against Gordon et al., which Part 1 covered. Same lens: CNVs, psychiatric genetics, and neuroimaging.</p>
+
+<h2>A corpus appeared</h2>
+
+<p>In late August a preprint described an atlas of 3.6 million cells assembled from 501 brain organoids across forty published studies. None of those studies was designed to be combined with the others. Different laboratories, protocols, cell lines, differentiation times, and questions. Somebody harmonised them anyway, then trained models on the result and used those models to predict what would happen if you perturbed any of 19,424 genes.</p>
+
+<p>The number of cells is not the remarkable part. What is remarkable is what it implies. Organoid data has quietly become a corpus. It is now large enough that some of the most interesting work can be done by people who never cultured anything, and that widens who can participate in the field.</p>
+
+<p>Then I looked at what the models were trained on. The perturbation data covered 68 genes. Around four in five were transcription regulators. Every perturbation was a knockdown or a knockout. There was no dosage series in the training set, and no CNV.</p>
+
+<p>The modelling infrastructure has arrived in our area ahead of the data.</p>
+
+<h2>What has changed since July</h2>
+
+<p>First, a proteomic layer now exists. Wang and colleagues mapped protein interactions for 100 high-confidence autism genes and reported more than 1,800 interactions, 87 per cent of them previously unreported. Until now the convergence literature was almost entirely transcriptomic.</p>
+
+<p>Second, a deletion has been shown to cause harm through the partner it leaves behind. This is new, and for CNVs it is the most generative of the recent results.</p>
+
+<p>Third, we have a concrete demonstration that a transcript change need not become a protein change. That sharpens how we should read dosage effects.</p>
+
+<p>Fourth, the sample-size argument I made in July now has published numbers attached to it, which makes it much easier to plan around.</p>
+
+<p>Fifth, in-silico perturbation of organoid atlases has moved from proposal to first working attempt, and the attempt tells us a lot about what to build next.</p>
+
+<h2>Three papers, three layers</h2>
+
+<p>These are complementary rather than competing. They ask one question at three levels of description, and none of them duplicates another.</p>
+
+<table>
+  <thead>
+    <tr><th>Study</th><th>Layer</th><th>What it adds</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gordon et al. 2026</td>
+      <td>Patient genetic background, transcriptome, developmental time</td>
+      <td>The reference dataset. Eight defined forms including five CNVs, profiled across four timepoints in patient-derived organoids.</td>
+    </tr>
+    <tr>
+      <td>Wang et al. 2026</td>
+      <td>Physical interaction and structure</td>
+      <td>A protein interaction map for 100 autism genes, plus 54 patient missense variants profiled for altered binding, with isogenic organoid follow-up.</td>
+    </tr>
+    <tr>
+      <td>Koh et al. 2026 (preprint)</td>
+      <td>In-silico extrapolation across the genome</td>
+      <td>A harmonised organoid atlas and a model that predicts perturbation responses for genes nobody has tested.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Gordon et al. remains the compass. It is the only one of the three with CNV carriers in it, it is the study I used in Part 1, and it set the standard the other two are now measured against.</p>
+
+<h2>A fourth way an interval gene can matter</h2>
+
+<p>In July I offered three models of how a CNV might act. One gene dominates, several genes act additively, or combinations produce nonlinear effects. There is a fourth, and it is now testable.</p>
+
+<p>A CNV can be a stoichiometry perturbation. If an interval contains one subunit of an obligate protein complex, hemizygosity does not simply reduce that subunit. It can destabilise the assembly. The relevant unit of analysis becomes the complex rather than the gene.</p>
+
+<p>What the interaction map makes possible is a question that could not be asked cleanly before. Do the genes inside a recurrent interval sit in a shared complex, and does that interval intersect a complex already implicated in neurodevelopment? For 16p11.2, 22q11.2, 15q13.3, 1q21.1 and 3q29 this reframes the old driver-gene problem, and it can be done against existing complex databases without generating anything new.</p>
+
+<p>Two things shape how the map should be used. It was generated in an immortalised kidney cell line with overexpressed tagged bait, which favours stable nuclear complexes and will under-report the cell-type-specific and activity-dependent interactions we care about. And the shift of the network's cell-type signal toward progenitors emerges after the authors add edges from a public interaction database, so it is best treated as a hypothesis about where to look rather than a measurement.</p>
+
+<h2>The deletion that acts through what remains</h2>
+
+<p>Two different patient variants in FOXP1, sitting in different parts of the protein, both weaken its pairing with FOXP4. The consequence is not simply less FOXP1 activity. FOXP4 is released and binds thousands of genomic sites it does not normally occupy. In organoids this produces premature deep-layer neurogenesis, and deleting FOXP4 rescues it.</p>
+
+<p>Part of the damage came from what the retained partner did once it was freed.</p>
+
+<p>Recurrent CNVs are full of situations where one member of a paralogous pair is deleted and the other is not. OTUD7A and OTUD7B at 15q13.3. MAPK3 and MAPK1 across 16p11.2. CRKL and CRK at 22q11.2. If partner release generalises, then some CNV phenotypes may involve gain-of-function events in genes lying outside the interval altogether. That would help explain why interval-gene dosage sometimes predicts severity poorly, and it opens a route to intervention that does not require restoring the deleted gene.</p>
+
+<p>This is one gene, two variants, one genetic background, so it is a hypothesis rather than a finding about CNVs. It is also cheap to pursue. Paralog compensation can be looked for in existing CNV expression data, and occupancy redistribution in existing chromatin data, before anyone cultures anything.</p>
+
+<h2>Reading dosage: transcripts and proteins</h2>
+
+<p>In the same paper, knocking down DYRK1A reduced its transcript substantially while barely changing its protein. The buffering was strong enough that the authors remark on it.</p>
+
+<p>Most CNV organoid work, including the studies I discussed in July, infers dosage propagation from transcript levels. Buffering of this kind can absorb a large transcript change before it reaches function, which means some of that inference will be conservative in one direction and generous in the other.</p>
+
+<p>Proteomic readouts are becoming the natural complement for CNV work. They measure the level at which buffering actually happens, and they are now accessible in organoid material in a way they were not a few years ago.</p>
+
+<h2>Independent genomes, now with numbers</h2>
+
+<p>In July I wrote that a study with three carriers is principally a three-donor study, however many cells it profiles. The numbers behind the field's largest study are now public, which turns a general caution into something you can design against.</p>
+
+<p>Gordon et al. reports 70 lines from 55 individuals and 464 samples. Within that, 16p11.2 deletion is four individuals. The reciprocal duplication is four. 15q13.3 deletion is three. PCDH19 is two. Timothy syndrome is two. The SHANK3 point mutation is one. Assembling that cohort was a substantial achievement, and reporting its composition this transparently is what lets the rest of us plan realistically.</p>
+
+<p>The paper also contributes something that should become standard practice. Of 96 lines, 26 were dropped after whole-genome sequencing, across 19 individuals, and nine of those were dropped for large copy-number changes acquired in culture. For most fields that is quality control. For us it is the independent variable appearing spontaneously in the samples. Sequencing every line is therefore part of the experiment rather than an overhead, and a published attrition rate makes it far easier to budget for.</p>
+
+<p>One methodological note for anyone building on the convergence result. The comparisons between genetic forms all share a control group, which will contribute some correlation between them. The reported increase in convergence with maturation is plausible and the analysis is more careful than most, and a permutation using split controls would settle it. That is a tractable follow-up on the deposited data.</p>
+
+<h2>A quiet line worth returning to</h2>
+
+<p>Gordon et al. profiled 11 individuals with idiopathic autism, no identified pathogenic variant, across four timepoints, with the most stringent quality control in the field. The analysis returned two differentially expressed genes.</p>
+
+<p>The paper reports this plainly and moves on. It may be the most informative sentence in the study, and it deserves more attention from psychiatric genetics than it has had.</p>
+
+<p>Read conservatively, it maps the current edge of the method. Organoid transcriptomics at this scale is well suited to genetics-first work on rare variants of large effect, and not yet suited to polygenic risk. Knowing where an edge sits tells you which questions to bring and which to keep with other datasets.</p>
+
+<p>Read more speculatively, and I offer this as a suggestion rather than a claim, the null may also carry information about where polygenic risk acts. If common-variant liability worked mainly through the early developmental programmes these models capture, some signal might have been expected across eleven individuals. Its absence is at least consistent with polygenic effects being distributed, small at any single point, or acting later through circuit-level and experience-dependent processes that a hundred-day organoid does not contain. That is a hypothesis, and it is now a testable one: ask whether polygenic scores predict anything in a sufficiently large organoid panel. Nobody has tried, because nobody has had the panels. That is beginning to change.</p>
+
+<h2>Where this could go</h2>
+
+<p>The three papers converge on similar recommendations in their closing sections. Move from single genes to complexes. Add readouts beyond the transcriptome. Get more independent genomes. Validate predictions prospectively.</p>
+
+<p>What is different from a few months ago is that several of those are now practical rather than aspirational. Donor pooling with genotype demultiplexing means a single differentiation batch can carry twenty or more independent genomes, which addresses the confound that limits panel designs at four donors per genotype. Proteomic readouts in organoid material have moved from specialist to routine. And there is now a public interaction map, a public organoid atlas, and a deposited patient CNV time-course to build against.</p>
+
+<p>If I had money to spend from where I sit, I would spend it on the one thing all three papers left open.</p>
+
+<p>Every perturbation in all three studies is a knockout or a knockdown. CNVs are half doses and one-and-a-half doses. Complete loss and partial loss can produce different, sometimes opposite, cellular outcomes, and a system that buffers a fifty per cent reduction will look unremarkable in a dosage experiment while looking dramatic in a knockout. Where those buffering thresholds sit for the genes inside recurrent intervals is, as far as I can tell, unknown.</p>
+
+<p>So the study would be a dosage series rather than a perturbation screen. Isogenic deletion, wild type and duplication for a small number of reciprocal intervals, alongside a pooled panel of unrelated carriers. Titratable rather than binary perturbation of interval genes, singly and in the paralogous pairs described above. Readouts at the protein level as well as the transcript level, because that is where the buffering happens, and at defined developmental windows rather than one endpoint.</p>
+
+<p>That design also produces exactly the training data the new models are missing. Even a modest primary result leaves behind a resource, and whoever generates the first organoid dosage atlas will shape what the next generation of these models can say about copy number.</p>
+
+<h2>The one question I would ask next</h2>
+
+<p>Do organoid-derived measures explain any variance in the human phenotype that we cannot already explain from the genotype alone?</p>
+
+<p>Carriers of the same CNV differ enormously in cognition, brain structure and diagnosis. We usually attribute that to polygenic background, additional variants, environment and ascertainment. Suppose instead we derived lines from twenty carriers of the same deletion who differ substantially in outcome, and measured a developmental programme in each. Does the cellular measure track the clinical or imaging difference between them?</p>
+
+<p>If it does, organoids become a stratification instrument rather than a mechanistic illustration, and their case in psychiatric genetics changes completely. If it does not, that is worth learning early, and it would point us toward where the variability we care about is actually generated.</p>
+
+<p>Either answer moves the field. Nobody has run the experiment, and for the first time it looks affordable.</p>
+
+<h2>Back to where Part 1 ended</h2>
+
+<p>I argued in July that organoids are controlled windows into selected consequences of genomic dosage, and that the further a claim travels from the dish, the more independent support it needs. That position has held. The idiopathic null and the modest residual signal in the predicted-gene analysis both mark where the current edges are, and edges are what let you aim.</p>
+
+<p>What has changed is the toolkit. We now have a way to ask whether the genes in an interval act as a complex, a plausible mechanism by which a deletion can act through a gene it does not contain, a sharper account of how dosage moves from transcript to protein, and published numbers showing how many independent genomes these studies rest on.</p>
+
+<p>None of that turns an organoid into a small brain. It does make the restricted question a great deal sharper, which was the point in the first place.</p>
+
+<h2>References</h2>
+
+<ol class="refs">
+  <li>Gordon A, Yoon S-J, Bicks LK, et al. Developmental convergence and divergence in human stem cell models of autism. <em>Nature</em>. 2026;651:707&ndash;719.</li>
+  <li>Wang B, Vartak R, Hennick KM, et al. Autism mutations rewire protein interaction networks to drive neurodevelopmental pathology. <em>Science</em>. 2026;393:eady4523.</li>
+  <li>Koh IG, Chang E, Choi Y, et al. AI-driven framework modeling perturbation in brain organoids reveals candidate genes for autism. <em>bioRxiv</em>. 2026. Preprint.</li>
+  <li>Urresti J, Zhang P, Moran-Losada P, et al. Cortical organoids model early brain development disrupted by 16p11.2 copy number variants in autism. <em>Molecular Psychiatry</em>. 2021;26:7560&ndash;7580.</li>
+  <li>Khan TA, Revah O, Gordon A, et al. Neuronal defects in a human cellular model of 22q11.2 deletion syndrome. <em>Nature Medicine</em>. 2020;26:1888&ndash;1898.</li>
+  <li>Jourdon A, Wu F, Mariani J, et al. Modeling idiopathic autism in forebrain organoids reveals an imbalance of excitatory cortical neuron subtypes during early neurogenesis. <em>Nature Neuroscience</em>. 2023;26:1505&ndash;1515.</li>
+  <li>Pintacuda G, Hsu Y-HH, Tsafou K, et al. Protein interaction studies in human induced neurons indicate convergent biology underlying autism spectrum disorders. <em>Cell Genomics</em>. 2023;3:100250.</li>
+</ol>
+
+<p class="note">As in Part 1, I am not an organoid biologist. I read these studies from the perspective of CNV, psychiatric, and neuroimaging genetics: what evidence they add, how far it can travel, and which human datasets remain essential alongside them.</p>
+
+</article>
+
+</body>
+</html>
